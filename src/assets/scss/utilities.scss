@@ -1,0 +1,338 @@
+@use "./variables.scss" as variables;
+
+
+// img sizes
+.l-img{
+    max-width: 8.5rem;
+    max-height: 8.5rem;
+}
+
+.m-img{
+    max-width: 5.5rem;
+    max-height: 5.5rem;
+}
+
+.s-img{
+    max-width: 3.5rem;
+    max-height: 3.5rem;
+}
+
+.xs-img{
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+}
+
+.xxs-img{
+    max-width: 1rem;
+    max-height: 1rem;
+}
+
+
+// font Size
+.font-size-8{
+    font-size: 8px;
+}
+.font-size-10{
+    font-size: 10px;
+}
+.font-size-12{
+    font-size: 12px;
+}
+.font-size-14{
+    font-size: 14px;
+}
+.font-size-16{
+    font-size: 16px;
+}
+.font-size-18{
+    font-size: 18px;
+}
+
+.font-size-24{
+    font-size: 24px;
+}
+.font-size-26{
+    font-size: 26px;
+}
+
+.font-size-28{
+    font-size: 28px;
+}
+
+
+
+// box shadows
+.box-shadow{
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.box-shadow-start{
+    box-shadow: -7px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.box-shadow-end{
+    box-shadow: 7px 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.box-shadow-top{
+    box-shadow: 0 -7px 15px rgba(0, 0, 0, 0.3);
+}
+
+.box-shadow-bottom{
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+// disabled elements
+.disabled-element {
+    pointer-events: none !important;
+    opacity: 0.4 !important;
+    // background-color: variables.$pure-gray !important;
+}
+
+
+// image fade effect and loader
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+.fade-in.loaded {
+    opacity: 1;
+}
+
+
+// load overrlay
+.loader-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background: variables.$pure-white;
+    z-index: 1;
+    pointer-events: none;
+}
+img.loaded + .loader-overlay {
+    display: none;
+}
+
+// text disposition styles
+.vertical-text {
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+}
+.vertical-text-reverse {
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+    transform: rotate(180deg);
+}
+.vertical-text-reverse-rtl {
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+    transform: rotate(180deg);
+    direction: rtl;
+}
+
+.diagonal-text {
+    transform: rotate(-25deg);
+    transform-origin: left top;
+    display: inline-block;
+}
+
+// cursors styles
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.cursor-not-allowed {
+    cursor: not-allowed;
+}
+
+.cursor-grabbing {
+    cursor: grabbing;
+}
+
+.cursor-grab {
+    cursor: grab;
+}
+
+.cursor-move {
+    cursor: move;
+}
+
+.cursor-text {
+    cursor: text;
+}
+
+.cursor-crosshair {
+    cursor: crosshair;
+}
+
+
+// borders
+.border-black-1{
+    border: 1px solid variables.$black-1!important;
+}
+.border-black-2{
+    border: 1px solid variables.$black-2!important;
+}
+.border-black-3{
+    border: 1px solid variables.$black-3!important;
+}
+.border-black-4{
+    border: 1px solid variables.$black-4!important;
+}
+
+
+// colors
+.color-black-1{
+    color: variables.$black-1!important;
+}
+
+.color-black-2{
+    color: variables.$black-2!important;
+}
+
+.color-black-3{
+    color: variables.$black-3!important;
+}
+
+.color-black-4{
+    color: variables.$black-4!important;
+}
+
+.color-black-5{
+    color: variables.$black-5!important;
+}
+
+.color-pure-gray{
+    color: variables.$pure-gray!important;
+}
+
+
+
+// background colors
+
+.bg-black-1{
+    background-color: variables.$black-1!important;
+}
+
+.bg-black-2{
+    background-color: variables.$black-2!important;
+}
+
+.bg-black-3{
+    background-color: variables.$black-3!important;
+}
+
+.bg-black-4{
+    background-color: variables.$black-4!important;
+}
+
+.bg-color-pure-gray{
+    background-color: variables.$pure-gray!important;
+}
+
+.bg-color-pure-white{
+    background-color: variables.$pure-white!important;
+}
+
+.bg-color-pure-red{
+    background-color: variables.$pure-red!important;
+}
+
+.bg-color-pure-green{
+    background-color: variables.$pure-green!important;
+}
+
+.bg-black-gradient {
+    background: 
+    linear-gradient(45deg, variables.$pure-black, variables.$black-4); 
+}
+  
+.bg-black-gradient::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI2ZmZiIgLz48L3N2Zz4='); /* tiny white pixel noise */
+    opacity: 0.05; 
+    background-repeat: repeat;
+    pointer-events: none; 
+}
+
+.bg-gray-gradient {
+    background: 
+    linear-gradient(45deg, variables.$black-1, variables.$black-2);
+}
+  
+// width
+
+.w-10{
+    width: 10%; 
+}
+
+.w-h20{
+    width: 20%;
+}
+
+.w-30{
+    width: 30%;
+}
+
+.w-40{
+    width: 40%;
+}
+
+.w-60{
+    width: 60%;
+}
+
+.w-70{
+    width: 70%;
+}
+
+.w-80{
+    width: 80%;
+}
+
+.w-90{
+    width: 90%;
+}
+
+.w-94{
+    width: 94%;
+}
+
+// height
+.h-10{
+    height: 10%; 
+}
+
+.h-h20{
+    height: 20%;
+}
+
+.h-30{
+    height: 30%;
+}
+
+.h-40{
+    height: 40%;
+}
+
+.h-60{
+    height: 60%;
+}
+
+.h-70{
+    height: 70%;
+}
+
+.h-80{
+    height: 80%;
+}
+
+.h-90{
+    height: 90%;
+}
+
