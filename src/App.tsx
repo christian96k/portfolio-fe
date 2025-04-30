@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.min.js'
 
-import Dashboard from "./pages/dashboard/Dashboard"
+import Home from './pages/home/Home';
 
 function App() {
 
   return (
-    <Dashboard/>
+    <Home/>
   )
 }
 
