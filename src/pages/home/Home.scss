@@ -1,3 +1,14 @@
 .home{
-    height: 100dvh;
+    // height: 100dvh;
+    background-image: linear-gradient(rgba(0, 0, 0, 09), rgba(0, 0, 0, 0.8)), url('../../assets/images/utils/bg-glitch.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    section{
+        padding: 4rem;;
+    }
+    &__introduction{
+       
+    }
 }

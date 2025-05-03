@@ -1,0 +1,13 @@
+.content-list{
+    &__item{
+        border-radius: 100%;
+        border: 2px solid white;
+        box-shadow: 0 0 10px rgb(55 169 159);
+        width: 7rem;
+        height: 7rem;
+        img{
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+}
