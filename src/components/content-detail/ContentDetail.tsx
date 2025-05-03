@@ -15,11 +15,11 @@ const ContentDetail: React.FC<ContentDetailProps> = ({
     order
 }) => {
     return(
-        <div id={id} className={`content-detail d-flex align-items-center gap-5 ${order === 'left' ? 'flex-row' : 'flex-row-reverse'}`}>
-            <div className="content-detail__bubble col-3">
+        <div id={id} className={`content-detail d-flex align-items-center row gap-5 ${order === 'left' ? 'flex-row' : 'flex-row-reverse'}`}>
+            <div className="content-detail__bubble col-12 col-md-3">
                 <img src={img_src} alt="img" /> 
             </div>
-            <p className='col-9 text-start'>
+            <p className='col-12 col-md-9 text-start'>
                 {description}
             </p>
         </div>

@@ -1,12 +1,16 @@
+@use "../../assets/scss/viewport.scss" as viewport;
 .home{
     // height: 100dvh;
-    background-image: linear-gradient(rgba(0, 0, 0, 09), rgba(0, 0, 0, 0.8)), url('../../assets/images/utils/bg-glitch.png');
+    background: linear-gradient(rgba(33, 33, 33, 09), rgba(0, 0, 0, 0.8));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
     section{
-        padding: 4rem;;
+        padding: 7rem  4rem;
+        @include viewport.custom-media-breakpoint-down(lg) {
+            padding: 6rem 2rem;
+        }
     }
     &__introduction{
        

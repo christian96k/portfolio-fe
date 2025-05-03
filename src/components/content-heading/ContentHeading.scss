@@ -1,0 +1,12 @@
+@use "../../assets/scss/viewport.scss" as viewport;
+
+.content-heading{
+    @include viewport.custom-media-breakpoint-down(lg) {
+        font-size: 20px!important
+    }
+    .text-rotate{
+        @include viewport.custom-media-breakpoint-down(lg) {
+            font-size: 16px!important
+        }
+    }
+}

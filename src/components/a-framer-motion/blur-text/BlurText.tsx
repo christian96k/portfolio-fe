@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion, Transition } from 'framer-motion';
 import { useEffect, useRef, useState, useMemo } from 'react';
+import RotatingText from '../text-rotate/TextRotate';
 
 type BlurTextProps = {
   text?: string;
@@ -15,6 +16,7 @@ type BlurTextProps = {
   easing?: (t: number) => number;
   onAnimationComplete?: () => void;
   stepDuration?: number;
+  rotatingText: string[];
 };
 
 const buildKeyframes = (
@@ -46,6 +48,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   easing = (t) => t,
   onAnimationComplete,
   stepDuration = 0.35,
+  rotatingText = []
 }) => {
   const elements = animateBy === 'words' ? text.split(' ') : text.split('');
   const [inView, setInView] = useState(false);
@@ -103,7 +106,6 @@ const BlurText: React.FC<BlurTextProps> = ({
     >
       {elements.map((segment, index) => {
         const animateKeyframes = buildKeyframes(fromSnapshot, toSnapshots);
-
         const spanTransition: Transition = {
           duration: totalDuration,
           times,
@@ -111,25 +113,66 @@ const BlurText: React.FC<BlurTextProps> = ({
         };
         (spanTransition as any).ease = easing;
 
-        return (
-          <motion.span
-            key={index}
-            initial={fromSnapshot}
-            animate={inView ? animateKeyframes : fromSnapshot}
-            transition={spanTransition}
-            onAnimationComplete={
-              index === elements.length - 1 ? onAnimationComplete : undefined
-            }
-            style={{
-              display: 'inline-block',
-              willChange: 'transform, filter, opacity',
-            }}
-          >
-            {segment === ' ' ? '\u00A0' : segment}
-            {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
-          </motion.span>
-        );
+      return (
+        <motion.span
+          key={`segment-${index}`}
+          initial={fromSnapshot}
+          animate={inView ? animateKeyframes : fromSnapshot}
+          transition={spanTransition}
+          onAnimationComplete={
+            index === elements.length - 1 && inView && onAnimationComplete
+              ? () => onAnimationComplete()
+              : undefined
+          }
+          style={{
+            display: 'inline-block',
+            willChange: 'transform, filter, opacity',
+          }}
+        >
+          {segment === ' ' ? '\u00A0' : segment}
+          {animateBy === 'words' && index < elements.length - 1 && '\u00A0'}
+        </motion.span>
+      );
       })}
+
+      {inView && (
+        <motion.span
+          initial={fromSnapshot}
+          animate={buildKeyframes(fromSnapshot, toSnapshots)}
+          transition={{
+            duration: totalDuration,
+            times,
+            delay: (elements.length * delay) / 1000, // dopo l’ultimo segmento
+            ease: easing,
+          }}
+          style={{
+            display: 'inline-block',
+            marginLeft: '0.5rem',
+            willChange: 'transform, filter, opacity',
+          }}
+        >
+          {
+            rotatingText.length  ? (
+
+              <RotatingText
+                texts={rotatingText}
+                mainClassName="font-size-28 rounded-2 px-2 px-md-3 bg-primary-color overflow-hidden py-1 py-1 py-md-2 justify-content-center rounded-lg font-size-24 font-weight-700"
+                staggerFrom="last"
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.055}
+                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={2000}
+              />
+            )
+            : null
+          }
+        </motion.span>
+      )}
+
+      
     </p>
   );
 };
