@@ -1,7 +1,6 @@
 import React from "react";
 import BlurText from "../a-framer-motion/blur-text/BlurText";
 import "./ContentHeading.scss";
-import { div } from "framer-motion/client";
 
 interface ContentHeadingProps {
     title: string;
