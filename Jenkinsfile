@@ -4,7 +4,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'metro-graph-frontend'
+        IMAGE_NAME = 'portfolio-fe'
         IMAGE_TAG = 'latest'
         REGISTRY_CREDENTIALS = 'docker-hub-id' // Usa le credenziali Jenkins per Docker Hub
         DOCKER_USERNAME = 'christian96k' // Nome utente Docker Hub
