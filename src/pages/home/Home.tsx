@@ -20,13 +20,13 @@ function Home() {
         <ContentHeading 
           title='Senior Software Engineer'
           description='This is a simple portfolio website created using React, Typescript, and Bootstrap. It showcases my skills and projects.'
-          rotatingText={['Fontend', 'Backend', 'Devops', 'Fullstack']}
+          rotatingText={['Frontend', 'Backend', 'Devops']}
         />
         <ContentDetail
           id="home-content"
           order="left"
           img_src={IMAGES_PATH.PROFILE_PICTURE}
-          description="I am a Senior Software Engineer with over 10 years of experience in the industry. I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java."
+          description="I am a Senior Software Engineer with over 10 years of experience in the industry. I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java. I am a Senior Software Engineer with over 10 years of experience in the industry. I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java."
         />
       </section>  
 

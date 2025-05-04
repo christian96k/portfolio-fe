@@ -84,7 +84,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
     };
 
     return (
-        <div className="focus-container d-flex gap-3 gap-md-5" ref={containerRef}>
+        <div className="focus-container d-flex gap-4 gap-md-5" ref={containerRef}>
             {words.map((word, index) => {
                 const isActive = index === currentIndex;
                 return (

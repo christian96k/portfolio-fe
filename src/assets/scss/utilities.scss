@@ -72,7 +72,7 @@
 
 
 .text-distance-1{
-    letter-spacing: 5px!important;
+    letter-spacing: 7px!important;
 }
 
 
@@ -225,6 +225,9 @@ img.loaded + .loader-overlay {
     color: variables.$pure-gray!important;
 }
 
+.color-primary{
+    color: variables.$primary-color!important;
+}
 
 
 // background colors
@@ -260,21 +263,29 @@ img.loaded + .loader-overlay {
 .bg-color-pure-green{
     background-color: variables.$pure-green!important;
 }
-
 .bg-black-gradient {
     background: 
-    linear-gradient(45deg, variables.$pure-black, variables.$black-4); 
-}
+    linear-gradient(45deg, variables.$black-2, variables.$black-1);
+    position: relative;
   
-.bg-black-gradient::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0iI2ZmZiIgLz48L3N2Zz4='); /* tiny white pixel noise */
-    opacity: 0.05; 
-    background-repeat: repeat;
-    pointer-events: none; 
+    z-index: 1;
+     &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 1px; // Thickness of the border
+      border-radius: inherit;
+      background: linear-gradient(135deg, variables.$black-2, variables.$tertiary-color);
+      -webkit-mask: 
+        linear-gradient(variables.$black-2 0 0) content-box, 
+        linear-gradient(variables.$black-2 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: -1;
+    }
 }
+
 
 .bg-gray-gradient {
     background: 
@@ -410,4 +421,9 @@ img.loaded + .loader-overlay {
 
 .bg-primary-color{
     background-color: variables.$primary-color!important;
+}
+
+.bg-primary-color-gradient {
+    background: 
+    linear-gradient(45deg, variables.$tertiary-color, variables.$pure-black); 
 }

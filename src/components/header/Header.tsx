@@ -3,7 +3,7 @@ import "./Header.scss";
 
 const Header = () => {
     return(
-        <header className="header w-100 py-3 d-flex gap-2 gap-md-3 justify-content-center align-items-center">
+        <header className="header w-100 py-3 d-flex gap-3 gap-md-3 justify-content-center align-items-center">
             {/* <div className="header__logo">
                 <img src="./public/favicon.ico" alt="Logo" />
             </div> */}
