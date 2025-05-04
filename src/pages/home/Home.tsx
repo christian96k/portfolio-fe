@@ -2,7 +2,6 @@ import ContentDetail from "../../components/content-detail/ContentDetail";
 import ContentHeading from "../../components/content-heading/ContentHeading";
 import ContentList from "../../components/content-list/ContentList";
 import Header from "../../components/header/Header";
-import RotatingText from "../../components/a-framer-motion/text-rotate/TextRotate";
 import { IMAGES_PATH } from "../../core/constants/images.path";
 
 import "./Home.scss";
