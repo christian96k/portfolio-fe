@@ -1,11 +1,46 @@
 
+import InfiniteMenu from "../../components/a-framer-motion/infinite-menu/InfiniteMenu";
 import ContentDetail from "../../components/content-detail/ContentDetail";
 import ContentHeading from "../../components/content-heading/ContentHeading";
-import ContentList from "../../components/content-list/ContentList";
 import Header from "../../components/header/Header";
 import { IMAGES_PATH } from "../../core/constants/images.path";
 
 import "./Home.scss";
+
+const images= [
+  {
+      image: IMAGES_PATH.PHP,
+      link: 'https://google.com/',
+      title: 'PHP',
+      description: 'Developed several web applications using PHP, including a content management system and a customer relationship management tool.'
+  },
+  {
+      image: IMAGES_PATH.LARAVEL,
+      link: 'https://google.com/',
+      title: 'Laravel',
+      description: 'Created multiple applications using Laravel, including a task management system and an online booking platform.'
+  },
+  {  
+      image: IMAGES_PATH.ANGULAR,
+      link: 'https://google.com/',
+      title: 'Angular',
+      description: 'Built numerous applications using Angular, including a large-scale e-commerce platform and a real-time chat application.'
+  },
+  {
+      image: IMAGES_PATH.REACT,
+      link: 'https://google.com/',
+      title: 'React',
+      description: 'Developed several web applications using React, including a social media platform and a project management tool.'
+  },
+  {
+      image: IMAGES_PATH.VUE,
+      link: 'https://google.com/',
+      title: 'Vue',
+      description: 'Created multiple applications using Vue, including a blogging platform and an online store.'
+  },
+   
+]
+
 function Home() {
   return (
     <main className="home">
@@ -15,25 +50,38 @@ function Home() {
         <Header/>
       </div>
 
+
+      
+
       {/* // HOME */}
       <section id='home' className="home__introduction d-flex flex-column justify-content-center align-items-center">
 
         <ContentHeading 
           title='Senior Software Engineer'
-          description='This is a simple portfolio website created using React, Typescript, and Bootstrap. It showcases my skills and projects.'
+          description='I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java.'
           rotatingText={['Frontend', 'Backend', 'Devops']}
         />
+
+        <div className='col-12 border-gradient rounded-3 my-5' style={{ height: '300px', position: 'relative' }}>
+          <InfiniteMenu items={images}/>
+        </div>
+
         <ContentDetail
           id="home-content"
           order="left"
           img_src={IMAGES_PATH.PROFILE_PICTURE}
           description="I am a Senior Software Engineer with over 10 years of experience in the industry. I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java. I am a Senior Software Engineer with over 10 years of experience in the industry. I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java."
         />
+
+
+       
       </section>  
 
 
+  
+
       {/* // PROJECTS */}
-      <section id='projects' className="home__projects d-flex flex-column justify-content-center align-items-center">
+      {/* <section id='projects' className="home__projects d-flex flex-column justify-content-center align-items-center">
         <ContentHeading
           title='Side Projects'
           description='I have worked on several side projects that showcase my skills and interests. These projects range from web applications to mobile apps, and I am always looking for new challenges to tackle.'
@@ -55,7 +103,7 @@ function Home() {
             { src: IMAGES_PATH.VUE, title: 'Vue' }
           ]}
         />
-      </section>
+      </section> */}
 
     </main>
   )
