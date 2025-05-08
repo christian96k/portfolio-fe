@@ -8,6 +8,13 @@ import PHP from '../../assets/images/stacks/php-logo.svg';
 import LARAVEL from '../../assets/images/stacks/laravel-logo.svg';
 
 
+import JENKINS from '../../assets/images/stacks/jenkins-logo.svg';
+import DOCKER from '../../assets/images/stacks/docker-logo.svg';
+import PYTHON from '../../assets/images/stacks/python-logo.svg';
+
+import MY_SQL from '../../assets/images/stacks/my-sql-logo.svg';
+import PG from '../../assets/images/stacks/pg-logo.svg';
+
 
 import BG_BLACK from '../../assets/images/utils/bg-black.jpg';
 import BG_GLITCH from '../../assets/images/utils/bg-glitch.png';
@@ -22,6 +29,13 @@ export const IMAGES_PATH = {
     VUE: VUE,
     PHP: PHP,
     LARAVEL: LARAVEL,
+
+    JENKINS: JENKINS,
+    DOCKER: DOCKER,
+    PYTHON: PYTHON,
+
+    MY_SQL: MY_SQL,
+    PG: PG,
 
     BG_BLACK:BG_BLACK,
     BG_GLITCH:BG_GLITCH,

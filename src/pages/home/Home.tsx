@@ -27,18 +27,48 @@ const images= [
       description: 'Built numerous applications using Angular, including a large-scale e-commerce platform and a real-time chat application.'
   },
   {
+      image: IMAGES_PATH.VUE,
+      link: 'https://google.com/',
+      title: 'Vue',
+      description: 'Created multiple applications using Vue, including a blogging platform and an online store.'
+  },
+  {
+      image: IMAGES_PATH.PYTHON,
+      link: 'https://google.com/',
+      title: 'Python',
+      description: 'Developed several applications using Python, including a data analysis tool and a web scraping script.'
+  },
+  {
+      image: IMAGES_PATH.MY_SQL,
+      link: 'https://google.com/',
+      title: 'MySQL',
+      description: 'Designed and implemented databases using MySQL for various applications.'
+  },
+  {
+      image: IMAGES_PATH.PG,
+      link: 'https://google.com/',
+      title: 'PostgreSQL',
+      description: 'Utilized PostgreSQL for database management in several projects.'
+  },
+  {
       image: IMAGES_PATH.REACT,
       link: 'https://google.com/',
       title: 'React',
       description: 'Developed several web applications using React, including a social media platform and a project management tool.'
   },
   {
-      image: IMAGES_PATH.VUE,
+      image: IMAGES_PATH.JENKINS,
       link: 'https://google.com/',
-      title: 'Vue',
-      description: 'Created multiple applications using Vue, including a blogging platform and an online store.'
+      title: 'Jenkins',
+      description: 'Implemented continuous integration and continuous deployment pipelines using Jenkins for various projects.'
   },
-   
+  {
+      image: IMAGES_PATH.DOCKER,
+      link: 'https://google.com/',
+      title: 'Docker',
+      description: 'Utilized Docker for containerization of applications, enabling easy deployment and scaling.'
+  },
+    
 ]
 
 function Home() {
@@ -50,9 +80,6 @@ function Home() {
         <Header/>
       </div>
 
-
-      
-
       {/* // HOME */}
       <section id='home' className="home__introduction d-flex flex-column justify-content-center align-items-center">
 
@@ -62,7 +89,7 @@ function Home() {
           rotatingText={['Frontend', 'Backend', 'Devops']}
         />
 
-        <div className='col-12 border-gradient rounded-3 my-5' style={{ height: '300px', position: 'relative' }}>
+        <div className='home__introduction__stacks col-12 border-gradient rounded-3' style={{ height: '300px', position: 'relative' }}>
           <InfiniteMenu items={images}/>
         </div>
 

@@ -10,6 +10,7 @@ interface GridDistortionProps {
   relaxation?: number;
   imageSrc: string;
   className?: string;
+  onReady?: () => void; 
 }
 
 const vertexShader = `
@@ -44,6 +45,7 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
   relaxation = 0.9,
   imageSrc,
   className = "",
+  onReady = () => {},
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageAspectRef = useRef<number>(1);
@@ -83,6 +85,9 @@ const GridDistortion: React.FC<GridDistortionProps> = ({
       imageAspectRef.current = texture.image.width / texture.image.height;
       uniforms.uTexture.value = texture;
       handleResize();
+      if (typeof onReady === 'function') {
+        onReady();
+      }
     });
 
     const size = grid;
