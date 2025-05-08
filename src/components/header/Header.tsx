@@ -8,7 +8,7 @@ const Header = () => {
                 <img src="./public/favicon.ico" alt="Logo" />
             </div> */}
             <TrueFocus 
-                sentence="Home About Projects Contact"
+                sentence="HOME ABOUT PROJECTS CONTACT"
                 manualMode={true}
                 blurAmount={3}
                 borderColor="#017c60"

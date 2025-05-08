@@ -199,6 +199,14 @@ img.loaded + .loader-overlay {
     border: 1px solid variables.$black-4!important;
 }
 
+.border-color-primary{
+    border: 1px solid variables.$primary-color!important;
+}
+
+.border-bottom-color-primary{
+    border-bottom: 1px solid variables.$primary-color!important;
+}
+
 
 // colors
 .color-black-1{
@@ -227,6 +235,14 @@ img.loaded + .loader-overlay {
 
 .color-primary{
     color: variables.$primary-color!important;
+}
+
+.color-secondary{
+    color: variables.$secondary-color!important;
+}
+
+.color-tertiary{
+    color: variables.$tertiary-color!important;
 }
 
 
@@ -430,6 +446,11 @@ img.loaded + .loader-overlay {
 
 .color-bash{
     color: variables.$pure-bash!important;
+}
+
+
+.backdrop-blur-5{
+    backdrop-filter: blur(5px);
 }
 
 .backdrop-blur-10{

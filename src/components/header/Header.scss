@@ -4,16 +4,18 @@
     top: 0;
     backdrop-filter: blur(10px);
     z-index: variables.$z-index-max;
-    // Rimuovi il border-bottom originale
-    // border-bottom: 1px solid variables.$primary-color;
   
-    &::after {
+    &::before {
       content: '';
       position: absolute;
+      left: 0;
+      right: 0;
       bottom: 0;
-      left: 5%;
-      width: 90%; // oppure 80% se lo vuoi più corto
-      border-bottom: 1px solid variables.$primary-color;
+      height: 1px; // Thickness of the border
+      border-radius: 0 0 inherit inherit;
+      background: linear-gradient(270deg, transparent, variables.$tertiary-color, transparent);
+      pointer-events: none;
+      z-index: -1;
     }
   }
   

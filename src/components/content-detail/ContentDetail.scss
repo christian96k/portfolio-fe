@@ -11,16 +11,16 @@
         // border: 2px solid variables.$pure-white;
         // box-shadow: 0 0 10px variables.$primary-color;
         border-radius: 100%;
-        width: 18rem;
-        height: 18rem;
+        width: 12rem;
+        height: 12rem;
         position: relative;
         img{
             position: absolute;
             top: 33%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 15rem;
-            height: 22rem;
+            max-width: 10rem;
+            // height: 22rem;
             // border-radius: 100%;
         }
     }

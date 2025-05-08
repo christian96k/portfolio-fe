@@ -3,23 +3,18 @@
 
 
 .home{
-    // height: 100dvh;
-    // background: linear-gradient(variables.$black-1,variables.$secondary-color, );
-    // background: variables.$black-1;
- 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
     section{
-        padding: 7rem  4rem;
+        padding: 12rem  4rem;
         @include viewport.custom-media-breakpoint-down(lg) {
             padding: 6rem 2rem;
         }
     }
     &__introduction{
        &__stacks{
-        margin: 12rem 0;
+            margin: 12rem 0;
+            @include viewport.custom-media-breakpoint-down(md) {
+                margin: 1rem 0;
+            }
        }
     }
 }

@@ -7,7 +7,7 @@ import { IMAGES_PATH } from "../../core/constants/images.path";
 
 import "./Home.scss";
 
-const images= [
+export const images = [
   {
       image: IMAGES_PATH.PHP,
       link: 'https://google.com/',
@@ -89,10 +89,6 @@ function Home() {
           rotatingText={['Frontend', 'Backend', 'Devops']}
         />
 
-        <div className='home__introduction__stacks col-12 border-gradient rounded-3' style={{ height: '300px', position: 'relative' }}>
-          <InfiniteMenu items={images}/>
-        </div>
-
         <ContentDetail
           id="home-content"
           order="left"
@@ -100,12 +96,22 @@ function Home() {
           description="I am a Senior Software Engineer with over 10 years of experience in the industry. I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java. I am a Senior Software Engineer with over 10 years of experience in the industry. I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java."
         />
 
-
-       
       </section>  
 
 
-  
+      <section id='about' className="home__about d-flex flex-column justify-content-center align-items-center">
+        <ContentHeading 
+          title='Tecnhical Skills'
+          description='I have a strong foundation in various programming languages and frameworks, including JavaScript, TypeScript, Python, and Java. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
+          rotatingText={['REACT', 'ANGULAR', 'VUE', 'PHP', 'LARAVEL', 'PYTHON', 'MYSQL', 'POSTGRESQL', 'DOCKER', 'JENKINS']}
+        />
+
+        <div className='col-12 border-gradient backdrop-blur-5 rounded-3' style={{ height: '300px', position: 'relative' }}>
+          <InfiniteMenu items={images}/>
+        </div>
+
+      </section>  
+
 
       {/* // PROJECTS */}
       {/* <section id='projects' className="home__projects d-flex flex-column justify-content-center align-items-center">
