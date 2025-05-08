@@ -1,5 +1,4 @@
 
-import GridDistortion from "../../components/a-framer-motion/grid-distortion/GridDistortion";
 import ContentDetail from "../../components/content-detail/ContentDetail";
 import ContentHeading from "../../components/content-heading/ContentHeading";
 import ContentList from "../../components/content-list/ContentList";

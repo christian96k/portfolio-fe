@@ -18,7 +18,7 @@ const ContentDetail: React.FC<ContentDetailProps> = ({
     decryptMode = false
 }) => {
     return(
-        <div id={id} className={`content-detail backdrop-blur-10 rounded-3 gap-5 d-flex justify-content-md-between align-items-center row  ${order === 'left' ? 'flex-row' : 'flex-row-reverse'}`}>
+        <div id={id} className={`content-detail backdrop-blur-10  rounded-3 gap-5 d-flex justify-content-md-between align-items-center row  ${order === 'left' ? 'flex-row' : 'flex-row-reverse'}`}>
             <div className="col-12 col-md-3 d-flex justify-content-center align-items-center">
                 <div className="content-detail__bubble bg-primary-color-gradient">
                     <img src={img_src} alt="img" /> 

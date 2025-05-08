@@ -425,7 +425,7 @@ img.loaded + .loader-overlay {
 
 .bg-primary-color-gradient {
     background: 
-    linear-gradient(45deg, variables.$tertiary-color, variables.$pure-black); 
+    linear-gradient(45deg, variables.$primary-color, variables.$pure-black); 
 }
 
 .color-bash{
@@ -470,4 +470,25 @@ img.loaded + .loader-overlay {
 
 .backdrop-blur-100{
     backdrop-filter: blur(100px);
+}
+
+
+.border-gradient {
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      padding: 1px; // Thickness of the border
+      border-radius: inherit;
+      background: linear-gradient(270deg, variables.$tertiary-color, variables.$black-3);
+      -webkit-mask: 
+        linear-gradient(variables.$black-2 0 0) content-box, 
+        linear-gradient(variables.$black-2 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      z-index: -1;
+    }
 }
