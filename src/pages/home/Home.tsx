@@ -1,3 +1,5 @@
+
+import GridDistortion from "../../components/a-framer-motion/grid-distortion/GridDistortion";
 import ContentDetail from "../../components/content-detail/ContentDetail";
 import ContentHeading from "../../components/content-heading/ContentHeading";
 import ContentList from "../../components/content-list/ContentList";
@@ -30,31 +32,6 @@ function Home() {
         />
       </section>  
 
-
-      {/* // ABOUT */}
-      <section id='about' className="home__about d-flex flex-column justify-content-center align-items-center">
-        <ContentHeading
-          title='Information about me'
-          description='I am a passionate software engineer with a strong background in web development and a keen interest in learning new technologies. I enjoy solving complex problems and building scalable applications.'
-          rotatingText={[]}
-        />
-        <ContentDetail
-          id="home-content"
-          order="right"
-          img_src={IMAGES_PATH.PROFILE_PICTURE}
-          description="Tech stack: I have experience with various technologies, including React, Angular, Vue.js, Node.js, Express.js, and MongoDB. I am also familiar with cloud platforms such as AWS and Azure. I am always eager to learn new technologies and improve my skills."
-        />
-        <ContentList
-          images={[
-            { src: IMAGES_PATH.ANGULAR, title: 'Angular' },
-            { src: IMAGES_PATH.REACT, title: 'React' },
-            { src: IMAGES_PATH.VUE, title: 'Vue' },
-            { src: IMAGES_PATH.ANGULAR, title: 'Angular' },
-            { src: IMAGES_PATH.REACT, title: 'React' },
-            { src: IMAGES_PATH.VUE, title: 'Vue' }
-          ]}
-        />
-      </section>
 
       {/* // PROJECTS */}
       <section id='projects' className="home__projects d-flex flex-column justify-content-center align-items-center">

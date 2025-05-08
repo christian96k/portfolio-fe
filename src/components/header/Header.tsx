@@ -11,7 +11,8 @@ const Header = () => {
                 sentence="Home About Projects Contact"
                 manualMode={true}
                 blurAmount={3}
-                borderColor="#37a99f"
+                borderColor="#017c60"
+                glowColor="#37a99f"
                 animationDuration={0.5}
                 pauseBetweenAnimations={1}
             />

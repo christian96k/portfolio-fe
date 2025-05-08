@@ -1,0 +1,28 @@
+// .distortion-container {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//     overflow: hidden;
+//     canvas {
+//       display: block;
+//     }
+//   }
+  
+
+.distortion-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; // molto importante per metterlo dietro
+  pointer-events: none; // evita che blocchi il mouse sui contenuti
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+  

@@ -265,25 +265,25 @@ img.loaded + .loader-overlay {
 }
 .bg-black-gradient {
     background: 
-    linear-gradient(45deg, variables.$black-2, variables.$black-1);
+    linear-gradient(320deg, variables.$black-2, variables.$pure-black);
     position: relative;
-  
+    backdrop-filter: blur(1000px);
     z-index: 1;
-     &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      padding: 1px; // Thickness of the border
-      border-radius: inherit;
-      background: linear-gradient(135deg, variables.$black-2, variables.$tertiary-color);
-      -webkit-mask: 
-        linear-gradient(variables.$black-2 0 0) content-box, 
-        linear-gradient(variables.$black-2 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      pointer-events: none;
-      z-index: -1;
-    }
+    // &::before {
+    //   content: '';
+    //   position: absolute;
+    //   inset: 0;
+    //   padding: 1px; // Thickness of the border
+    //   border-radius: inherit;
+    //   background: linear-gradient(270deg, variables.$black-1, variables.$secondary-color);
+    //   -webkit-mask: 
+    //     linear-gradient(variables.$black-2 0 0) content-box, 
+    //     linear-gradient(variables.$black-2 0 0);
+    //   -webkit-mask-composite: xor;
+    //   mask-composite: exclude;
+    //   pointer-events: none;
+    //   z-index: -1;
+    // }
 }
 
 
@@ -426,4 +426,48 @@ img.loaded + .loader-overlay {
 .bg-primary-color-gradient {
     background: 
     linear-gradient(45deg, variables.$tertiary-color, variables.$pure-black); 
+}
+
+.color-bash{
+    color: variables.$pure-bash!important;
+}
+
+.backdrop-blur-10{
+    backdrop-filter: blur(10px);
+}
+
+.backdrop-blur-20{
+    backdrop-filter: blur(20px);
+}
+
+.backdrop-blur-30{
+    backdrop-filter: blur(30px);
+}
+
+.backdrop-blur-40{
+    backdrop-filter: blur(40px);
+}
+
+.backdrop-blur-50{
+    backdrop-filter: blur(50px);
+}
+
+.backdrop-blur-60{
+    backdrop-filter: blur(60px);
+}
+
+.backdrop-blur-70{
+    backdrop-filter: blur(70px);
+}
+
+.backdrop-blur-80{
+    backdrop-filter: blur(80px);
+}
+
+.backdrop-blur-90{
+    backdrop-filter: blur(90px);
+}
+
+.backdrop-blur-100{
+    backdrop-filter: blur(100px);
 }

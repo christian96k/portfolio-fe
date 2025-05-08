@@ -116,7 +116,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
             })}
 
             <motion.div
-                className="focus-frame"
+                className="focus-frame "
                 animate={{
                     x: focusRect.x,
                     y: focusRect.y,
