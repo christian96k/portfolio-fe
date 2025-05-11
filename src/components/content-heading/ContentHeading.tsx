@@ -5,7 +5,7 @@ import "./ContentHeading.scss";
 interface ContentHeadingProps {
     title: string;
     description: string;
-    rotatingText:string[]
+    rotatingText?:string[]
 }
 
 const ContentHeading:React.FC<ContentHeadingProps> = (

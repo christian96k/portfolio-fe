@@ -17,6 +17,23 @@ import PG from '../../assets/images/stacks/pg-logo.svg';
 
 import DIGITAL_OCEAN from '../../assets/images/stacks/digital-ocean-logo.svg';
 
+import DEAS from '../../assets/images/companies/deas-logo.png';
+import ACCENTURE from '../../assets/images/companies/accenture-logo.svg';
+import TAAL from '../../assets/images/companies/taal-logo.png';
+import KPI6 from '../../assets/images/companies/kpi6-logo.svg';
+
+import NHHOLLAND from '../../assets/images/companies/new-holland-logo.png';
+import NHOLLAND_CON from '../../assets/images/companies/new-holland-con-logo.png';
+import CASEIH from '../../assets/images/companies/caseih-logo.png';
+import CASEIH_CON from '../../assets/images/companies/case-con-logo.png';
+
+import ODIENCE from '../../assets/images/companies/odience.png';
+
+import ORION from '../../assets/images/companies/orion-logo.png';
+
+import WHIRLPOOL from '../../assets/images/companies/whirlpool-logo.png';
+import INDESIT from '../../assets/images/companies/indesit-logo.png';
+
 import BG_BLACK from '../../assets/images/utils/bg-black.jpg';
 import BG_GLITCH from '../../assets/images/utils/bg-glitch.png';
 import BG_PRISM from '../../assets/images/utils/bg-prism.jpg';
@@ -25,6 +42,8 @@ import BG_MULTIPRISM from '../../assets/images/utils/bg-multi-prism-3.jpg';
 export const IMAGES_PATH = {
     PROFILE_PICTURE: MY_PHOTO,
     
+
+    // ----- stacks
     ANGULAR: ANGULAR,
     REACT: REACT,
     VUE: VUE,
@@ -39,6 +58,30 @@ export const IMAGES_PATH = {
     PG: PG,
     DIGITAL_OCEAN: DIGITAL_OCEAN,
 
+
+    // ---- companies
+    DEAS: DEAS,
+    // project 
+    ORION: ORION,
+
+
+    ACCENTURE: ACCENTURE,
+    // project 
+    NHHOLLAND: NHHOLLAND,
+    NHOLLAND_CON: NHOLLAND_CON,
+    CASEIH: CASEIH,
+    CASEIH_CON: CASEIH_CON,
+
+    TAAL: TAAL,
+    // project
+    WHIRLPOOL: WHIRLPOOL,
+    INDESIT: INDESIT,
+
+    KPI6: KPI6,
+    // project
+    ODIENCE: ODIENCE,
+
+    // ----- utils
     BG_BLACK:BG_BLACK,
     BG_GLITCH:BG_GLITCH,
     BG_PRISM:BG_PRISM,

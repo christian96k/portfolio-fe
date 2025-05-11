@@ -4,7 +4,7 @@
 
 .home{
     section{
-        padding: 10rem  4rem;
+        padding: 8rem  4rem;
         @include viewport.custom-media-breakpoint-down(lg) {
             padding: 6rem 2rem;
         }

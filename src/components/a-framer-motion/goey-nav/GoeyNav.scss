@@ -37,7 +37,7 @@
   }
   
   .gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
-    box-shadow: 0 0 0.5px 1.5px variables.$pure-white;;
+    box-shadow: 0 0 0.5px 1.5px variables.$pure-white;
   }
   
   .gooey-nav-container nav ul li::after {

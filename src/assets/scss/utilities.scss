@@ -535,5 +535,22 @@ img.loaded + .loader-overlay {
         }
     }
 
+    &.bottom {
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          padding: 0 0 1px 0; // Apply padding only to the bottom
+          border-radius: inherit;
+          background: linear-gradient(to top, variables.$tertiary-color, transparent);
+          -webkit-mask:
+            linear-gradient(variables.$black-2 0 0) content-box,
+            linear-gradient(variables.$black-2 0 0);
+          -webkit-mask-composite: xor;
+          mask-composite: exclude;
+          pointer-events: none;
+          z-index: -1;
+        }
+    }
    
 }
