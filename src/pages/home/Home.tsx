@@ -1,5 +1,6 @@
 
-import InfiniteMenu from "../../components/a-framer-motion/infinite-menu/InfiniteMenu";
+import { useState } from "react";
+import InfiniteMenu, { MenuItem } from "../../components/a-framer-motion/infinite-menu/InfiniteMenu";
 import ContentDetail from "../../components/content-detail/ContentDetail";
 import ContentHeading from "../../components/content-heading/ContentHeading";
 import Header from "../../components/header/Header";
@@ -7,7 +8,7 @@ import { IMAGES_PATH } from "../../core/constants/images.path";
 
 import "./Home.scss";
 
-export const images = [
+export const images:MenuItem[] = [
   {
       active:false,
       image: IMAGES_PATH.PHP,
@@ -82,6 +83,9 @@ export const images = [
 ]
 
 function Home() {
+  const [inifiniteMenu, setInfiniteMenu] = useState<MenuItem[]>(images);
+
+
   return (
     <main className="home">
       {/* // HEADER */}
@@ -117,7 +121,7 @@ function Home() {
         />
 
         <div className='col-12 col-md-9 border-gradient backdrop-blur-5 rounded-3' style={{ height: '300px', position: 'relative' }}>
-          <InfiniteMenu items={images}/>
+          <InfiniteMenu items={inifiniteMenu}/>
         </div>
 
         <div className="col-12 col-md-3 overflow-y-auto" style={{ height: '300px', position: 'relative' }}>
