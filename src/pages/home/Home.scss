@@ -17,4 +17,28 @@
             }
        }
     }
+
+    &__about{
+        &__list{
+            li{
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 1px;
+                    border-radius: 0 0 inherit inherit;
+                    background: linear-gradient(270deg, transparent, variables.$tertiary-color, transparent);
+                    pointer-events: none;
+                    z-index: -1;
+                }
+                &.active, &:hover{
+                    background: 
+                    linear-gradient(45deg, variables.$primary-color, variables.$pure-black); 
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }

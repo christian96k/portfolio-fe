@@ -718,6 +718,7 @@ interface MenuItem {
   link: string;
   title: string;
   description: string;
+  active: boolean;
 }
 
 type ActiveItemCallback = (index: number) => void;
@@ -1197,7 +1198,7 @@ class InfiniteGridMenu {
     if (!this.gl) return;
     const canvasEl = this.gl.canvas as HTMLCanvasElement;
     this.camera.aspect = canvasEl.clientWidth / canvasEl.clientHeight;
-    const height = this.SPHERE_RADIUS * 0.35;
+    const height = this.SPHERE_RADIUS * 0.85;
     const distance = this.camera.position[2];
     if (this.camera.aspect > 1) {
       this.camera.fov = 2 * Math.atan(height / distance);
@@ -1290,6 +1291,7 @@ const defaultItems: MenuItem[] = [
     link: "https://google.com/",
     title: "",
     description: "",
+    active: false,
   },
 ];
 
@@ -1360,7 +1362,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
             {activeItem.title}
           </h2>
 
-          <p className={`face-description backdrop-blur-90 p-3 rounded-3 font-size-14 ${isMoving ? "inactive" : "active"}`}>
+          <p className={`face-description backdrop-blur-100 p-3 rounded-3 font-size-14 ${isMoving ? "inactive" : "active"}`}>
             {activeItem.description}
           </p>
 

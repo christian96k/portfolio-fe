@@ -9,60 +9,70 @@ import "./Home.scss";
 
 export const images = [
   {
+      active:false,
       image: IMAGES_PATH.PHP,
       link: 'https://google.com/',
       title: 'PHP',
       description: 'Developed several web applications using PHP, including a content management system and a customer relationship management tool.'
   },
   {
+      active:false,
       image: IMAGES_PATH.LARAVEL,
       link: 'https://google.com/',
       title: 'Laravel',
       description: 'Created multiple applications using Laravel, including a task management system and an online booking platform.'
   },
   {  
+      active:false,
       image: IMAGES_PATH.ANGULAR,
       link: 'https://google.com/',
       title: 'Angular',
       description: 'Built numerous applications using Angular, including a large-scale e-commerce platform and a real-time chat application.'
   },
   {
+      active:false,
       image: IMAGES_PATH.VUE,
       link: 'https://google.com/',
       title: 'Vue',
       description: 'Created multiple applications using Vue, including a blogging platform and an online store.'
   },
   {
+      active:false,
       image: IMAGES_PATH.PYTHON,
       link: 'https://google.com/',
       title: 'Python',
       description: 'Developed several applications using Python, including a data analysis tool and a web scraping script.'
   },
   {
+      active:false,
       image: IMAGES_PATH.MY_SQL,
       link: 'https://google.com/',
       title: 'MySQL',
       description: 'Designed and implemented databases using MySQL for various applications.'
   },
   {
+      active:false,
       image: IMAGES_PATH.PG,
       link: 'https://google.com/',
       title: 'PostgreSQL',
       description: 'Utilized PostgreSQL for database management in several projects.'
   },
   {
+      active:false,
       image: IMAGES_PATH.REACT,
       link: 'https://google.com/',
       title: 'React',
       description: 'Developed several web applications using React, including a social media platform and a project management tool.'
   },
   {
+      active:false,
       image: IMAGES_PATH.JENKINS,
       link: 'https://google.com/',
       title: 'Jenkins',
       description: 'Implemented continuous integration and continuous deployment pipelines using Jenkins for various projects.'
   },
   {
+      active:false,
       image: IMAGES_PATH.DOCKER,
       link: 'https://google.com/',
       title: 'Docker',
@@ -99,15 +109,27 @@ function Home() {
       </section>  
 
 
-      <section id='about' className="home__about d-flex flex-column justify-content-center align-items-center">
+      <section id='about' className="home__about row justify-content-center align-items-center">
         <ContentHeading 
           title='Tecnhical Skills'
           description='I have a strong foundation in various programming languages and frameworks, including JavaScript, TypeScript, Python, and Java. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
           rotatingText={['REACT', 'ANGULAR', 'VUE', 'PHP', 'LARAVEL', 'PYTHON', 'MYSQL', 'POSTGRESQL', 'DOCKER', 'JENKINS']}
         />
 
-        <div className='col-12 border-gradient backdrop-blur-5 rounded-3' style={{ height: '300px', position: 'relative' }}>
+        <div className='col-12 col-md-9 border-gradient backdrop-blur-5 rounded-3' style={{ height: '300px', position: 'relative' }}>
           <InfiniteMenu items={images}/>
+        </div>
+
+        <div className="col-12 col-md-3 overflow-y-auto" style={{ height: '300px', position: 'relative' }}>
+          <ul className="home__about__list list-unstyled ">
+            {images.map((item, index) => (
+              <li key={index} className={`d-flex flex-column justify-content-center align-items-center border-gradient backdrop-blur-10 rounded-3  mb-2 p-2 ${item.active ? 'active' : ''}`}>
+                <img width={30} height={30} src={item.image} alt={item.title} className="img-fluid" />
+                <h6 className="font-size-14">{item.title}</h6>
+                <p className="font-size-12">{item.description}</p>
+              </li>
+            ))}
+          </ul>
         </div>
 
       </section>  
