@@ -26,7 +26,7 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   );
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, children }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ text, image, children }) => {
   const itemRef = React.useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
   const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
@@ -107,7 +107,6 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, children }) => {
     <div className="menu__item backdrop-filter-10 d-flex justify-content-center" ref={itemRef}>
         <a
             className="menu__item-link w-100 d-flex flex-column align-items-center justify-content-center"
-            href={link}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >   
