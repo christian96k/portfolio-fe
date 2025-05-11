@@ -4,7 +4,7 @@
 
 .home{
     section{
-        padding: 12rem  4rem;
+        padding: 10rem  4rem;
         @include viewport.custom-media-breakpoint-down(lg) {
             padding: 6rem 2rem;
         }
@@ -19,7 +19,18 @@
     }
 
     &__about{
+
+        &__infinite,&__list{
+            height: 300px;
+        }
+
+
+
         &__list{
+            @include viewport.custom-media-breakpoint-down(md) {
+                height: 200px;
+
+            }
             li{
                 &::before {
                     content: '';
@@ -33,10 +44,9 @@
                     pointer-events: none;
                     z-index: -1;
                 }
-                &.active, &:hover{
+                &.active{
                     background: 
                     linear-gradient(45deg, variables.$primary-color, variables.$pure-black); 
-                    cursor: pointer;
                 }
             }
         }

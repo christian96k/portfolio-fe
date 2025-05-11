@@ -755,7 +755,6 @@ class InfiniteGridMenu {
   private worldMatrix = mat4.create();
   private tex: WebGLTexture | null = null;
   private control!: ArcballControl;
-
   private discLocations!: {
     aModelPosition: number;
     aModelUvs: number;
@@ -795,6 +794,10 @@ class InfiniteGridMenu {
   private TARGET_FRAME_DURATION = 1000 / 60; // 60 fps
   private SPHERE_RADIUS = 2;
 
+  private activeIndex: number = -1;
+  private isCanvasVisible: boolean = false;
+
+
   public camera: Camera = {
     matrix: mat4.create(),
     near: 0.1,
@@ -816,11 +819,13 @@ class InfiniteGridMenu {
   constructor(
     private canvas: HTMLCanvasElement,
     private items: MenuItem[],
+    public activeItemChange: (index:number)=>void,
     private onActiveItemChange: ActiveItemCallback,
     private onMovementChange: MovementChangeCallback,
     onInit?: InitCallback
   ) {
     this.init(onInit);
+    
   }
 
   public resize(): void {
@@ -904,6 +909,7 @@ class InfiniteGridMenu {
       uFrames: gl.getUniformLocation(this.discProgram!, "uFrames"),
       uItemCount: gl.getUniformLocation(this.discProgram!, "uItemCount"),
       uAtlasSize: gl.getUniformLocation(this.discProgram!, "uAtlasSize"),
+      
     };
 
     // Geometry
@@ -934,7 +940,19 @@ class InfiniteGridMenu {
 
     // Texture
     this.initTexture();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          this.isCanvasVisible = entry.isIntersecting;
+        }
+      },
+      {
+        root: null,
+        threshold: 0.01,
+      }
+    );
 
+    observer.observe(this.canvas);
     // Arcball
     this.control = new ArcballControl(this.canvas, (deltaTime) =>
       this.onControlUpdate(deltaTime)
@@ -1232,26 +1250,35 @@ class InfiniteGridMenu {
       this.onMovementChange(isMoving);
     }
 
-    // handle snapping to nearest item if not dragging
+    
+
     if (!this.control.isPointerDown) {
       const nearestVertexIndex = this.findNearestVertexIndex();
-      const itemIndex = nearestVertexIndex % Math.max(1, this.items.length);
-      this.onActiveItemChange(itemIndex);
+      const itemIndex = nearestVertexIndex % Math.max(1, this.items.length); 
+      if (this.activeIndex !== itemIndex && this.isCanvasVisible) {
+        this.activeIndex = itemIndex;
+        this.onActiveItemChange(itemIndex); 
+        this.activeItemChange(itemIndex);
+      }
+      
       const snapDirection = vec3.normalize(
         vec3.create(),
         this.getVertexWorldPosition(nearestVertexIndex)
       );
       this.control.snapTargetDirection = snapDirection;
     } else {
-      // push camera back if user is dragging quickly
       cameraTargetZ += this.control.rotationVelocity * 80 + 2.5;
       damping = 7 / timeScale;
+
     }
 
+
+    
     this.camera.position[2] +=
       (cameraTargetZ - this.camera.position[2]) / damping;
     this.updateCameraMatrix();
-  }
+}
+
 
   private findNearestVertexIndex(): number {
     const n = this.control.snapDirection;
@@ -1281,6 +1308,7 @@ class InfiniteGridMenu {
       this.control.orientation
     );
   }
+
 }
 
 // -------- Default Items --------
@@ -1299,9 +1327,10 @@ const defaultItems: MenuItem[] = [
 
 interface InfiniteMenuProps {
   items?: MenuItem[];
+  activeItemChange: (number: number) => void,
 }
 
-const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
+const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] , activeItemChange}) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(
     null
   ) as MutableRefObject<HTMLCanvasElement | null>;
@@ -1322,6 +1351,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
       sketch = new InfiniteGridMenu(
         canvas,
         items.length ? items : defaultItems,
+        activeItemChange,
         handleActiveItem,
         setIsMoving,
         (sk) => sk.run()
@@ -1362,7 +1392,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [] }) => {
             {activeItem.title}
           </h2>
 
-          <p className={`face-description backdrop-blur-100 p-3 rounded-3 font-size-14 ${isMoving ? "inactive" : "active"}`}>
+          <p className={`face-description border-gradient right backdrop-blur-100 p-2 rounded-3 font-size-12 ${isMoving ? "inactive" : "active"}`}>
             {activeItem.description}
           </p>
 

@@ -3,13 +3,11 @@
 
 
 .content-detail{
-    padding: 6rem 4rem ;
+    padding: 4rem 2rem ;
     @include viewport.custom-media-breakpoint-down(lg) {
-        padding: 6rem 1rem;
+        padding: 2rem 1rem;
     }
     &__bubble{
-        // border: 2px solid variables.$pure-white;
-        // box-shadow: 0 0 10px variables.$primary-color;
         border-radius: 100%;
         width: 12rem;
         height: 12rem;
@@ -20,8 +18,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
             max-width: 10rem;
-            // height: 22rem;
-            // border-radius: 100%;
         }
     }
 }

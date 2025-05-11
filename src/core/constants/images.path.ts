@@ -15,6 +15,7 @@ import PYTHON from '../../assets/images/stacks/python-logo.svg';
 import MY_SQL from '../../assets/images/stacks/my-sql-logo.svg';
 import PG from '../../assets/images/stacks/pg-logo.svg';
 
+import DIGITAL_OCEAN from '../../assets/images/stacks/digital-ocean-logo.svg';
 
 import BG_BLACK from '../../assets/images/utils/bg-black.jpg';
 import BG_GLITCH from '../../assets/images/utils/bg-glitch.png';
@@ -36,6 +37,7 @@ export const IMAGES_PATH = {
 
     MY_SQL: MY_SQL,
     PG: PG,
+    DIGITAL_OCEAN: DIGITAL_OCEAN,
 
     BG_BLACK:BG_BLACK,
     BG_GLITCH:BG_GLITCH,
