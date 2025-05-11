@@ -123,7 +123,7 @@ function Home() {
 
         <ContentHeading 
           title='Senior Software Engineer'
-          description='I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, and Java.'
+          description='I have worked on various projects, ranging from web applications to mobile apps. My expertise lies in full-stack development, and I am proficient in languages such as JavaScript, TypeScript, Python, Sql...'
           rotatingText={['Frontend', 'Backend', 'Devops']}
         />
 
@@ -137,10 +137,10 @@ function Home() {
       </section>  
 
 
-      <section id='about' className="home__about col-12 row justify-content-center align-items-center">
+      <section id='about' className="home__about m-0 row justify-content-center align-items-center">
         <ContentHeading 
           title='Technical Skills'
-          description='I have a strong foundation in various programming languages and frameworks, including JavaScript, TypeScript, Python, and Java. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
+          description='I have a strong foundation in various programming languages and frameworks, including JavaScript, Python, Sql. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
           rotatingText={images.map((item) => item.title.toUpperCase())}
         />
 
@@ -149,7 +149,7 @@ function Home() {
         </div>
 
         <div className="home__about__list  col-12  col-md-3 mb-5 mb-md-0 order-1 order-md-2" >
-          <ul ref={listRef} className="home__about__list pe-0 pe-md-2 list-unstyled overflow-y-auto  py-2" >
+          <ul ref={listRef} className="home__about__list pe-2 list-unstyled overflow-y-auto  py-2" >
             {inifiniteMenu.map((item, index) => (
               <li ref={(el) => { listItemRefs.current[index] = el; }} key={index} className={`d-flex flex-column justify-content-center align-items-center border-gradient backdrop-blur-10 rounded-3  mb-2 p-2 ${item.active ? 'active' : ''}`}>
                 <img width={30} height={30} src={item.image} alt={item.title} className="img-fluid" />

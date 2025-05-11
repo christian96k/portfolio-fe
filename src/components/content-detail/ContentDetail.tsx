@@ -36,11 +36,11 @@ const ContentDetail: React.FC<ContentDetailProps> = ({
                     speed={0.1}
                     maxIterations={0.1}
                     revealDirection='start'
-                    className="font-size-16"
+                    className="font-size-14"
                     encryptedClassName='color-primary font-size-14' 
                 />
                     :
-                <p className='text-start font-size-16' >
+                <p className='text-start font-size-14' >
                     {description}
                 </p>
             }
