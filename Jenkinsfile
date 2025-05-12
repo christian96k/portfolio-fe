@@ -1,5 +1,3 @@
-// TODO: CHANGE
-
 pipeline {
     agent any
 
@@ -45,20 +43,7 @@ pipeline {
             }
         }
 
-
-        // Stage 3: Remove All Local Images with Same Name
-        stage('Remove All Local Images with Same Name') {
-            steps {
-            script {
-                // Rimuovi tutte le immagini locali con lo stesso nome
-                sh """
-                docker images "${IMAGE_NAME}" --format "{{.Repository}}:{{.Tag}}" | xargs -r docker rmi || true
-                """
-            }
-            }
-        }
-
-        // Stage 4: Deploy dell'immagine sulla VM tramite Docker Compose
+        // Stage 3: Deploy dell'immagine sulla VM tramite Docker Compose
         stage('Deploy on Local VM via Docker Compose') {
             steps {
                 script {
@@ -70,8 +55,18 @@ pipeline {
             }
         }
 
-
-
+        // Stage 4: Remove All Local Images with Same Name
+        stage('Remove All Local Images with Same Name') {
+            steps {
+                script {
+                    // Rimuovi tutte le immagini locali con lo stesso nome tranne la latest
+                    sh '''
+                        docker images "${IMAGE_NAME}" --format "{{.ID}} {{.Tag}}" | \
+                        grep -v "latest" | awk '{print $1}' | xargs -r docker rmi || true
+                    '''
+                }
+            }
+        }
     }
 
     post {
