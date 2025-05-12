@@ -86,11 +86,11 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, image, children }) => {
     return Array.from({ length: 4 }).map((_, idx) => (
       <React.Fragment key={idx}>
         {/* <span>{text}</span> */}
-        <div className="children d-flex gap-5">
+        <div className="children d-flex gap-5 align-items-center">
             { children.map((child, index) => (
                 <div key={index} className="children__item text-center mx-3">
                     <img className="img-fluid" height={55}  width={70} src={child.image} alt="" />
-                    <span className="font-size-12">{child.text}</span>
+                    {/* <span className="font-size-12">{child.text}</span> */}
                 </div>
             ))}
         </div>
@@ -110,7 +110,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, image, children }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >   
-          <div className="menu__item-image-container d-flex align-items-center gap-1 flex-column justify-content-center border-gradient bottom bg-primary-color-gradient p-2  px-3 rounded-3">
+          <div className="menu__item-image-container d-flex align-items-center gap-1 flex-column justify-content-center border-gradient bottom backdrop-blur-100 p-2  px-3 rounded-3">
             <img width={65}  src={image} alt="" />
             <span className="font-size-12">
               {text}

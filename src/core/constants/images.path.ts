@@ -27,12 +27,15 @@ import NHOLLAND_CON from '../../assets/images/companies/new-holland-con-logo.png
 import CASEIH from '../../assets/images/companies/caseih-logo.png';
 import CASEIH_CON from '../../assets/images/companies/case-con-logo.png';
 
-import ODIENCE from '../../assets/images/companies/odience.png';
+import ODIENCE from '../../assets/images/companies/odience-logo.png';
+import MARKETEAR from '../../assets/images/companies/marketear-logo.png';
 
 import ORION from '../../assets/images/companies/orion-logo.png';
+import ARCHIMEDE from '../../assets/images/companies/archimede-logo.png';
 
 import WHIRLPOOL from '../../assets/images/companies/whirlpool-logo.png';
 import INDESIT from '../../assets/images/companies/indesit-logo.png';
+import RESERVARE from '../../assets/images/companies/reservare-logo.png';
 
 import BG_BLACK from '../../assets/images/utils/bg-black.jpg';
 import BG_GLITCH from '../../assets/images/utils/bg-glitch.png';
@@ -63,7 +66,7 @@ export const IMAGES_PATH = {
     DEAS: DEAS,
     // project 
     ORION: ORION,
-
+    ARCHIMEDE: ARCHIMEDE,
 
     ACCENTURE: ACCENTURE,
     // project 
@@ -76,10 +79,12 @@ export const IMAGES_PATH = {
     // project
     WHIRLPOOL: WHIRLPOOL,
     INDESIT: INDESIT,
+    RESERVARE: RESERVARE,
 
     KPI6: KPI6,
     // project
     ODIENCE: ODIENCE,
+    MARKETEAR: MARKETEAR,
 
     // ----- utils
     BG_BLACK:BG_BLACK,

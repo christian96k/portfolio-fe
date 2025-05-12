@@ -95,7 +95,7 @@ const companyProjects = [
     [
       { link: '', text: 'Whirlpool', image: IMAGES_PATH.WHIRLPOOL, children: [] },
       { link: '', text: 'Indesit', image: IMAGES_PATH.INDESIT, children: [] },
-      { link: '', text: 'Reservare', image: '', children: [] }
+      { link: '', text: 'Reservare', image: IMAGES_PATH.RESERVARE, children: [] }
 
     ]
   },
@@ -110,13 +110,13 @@ const companyProjects = [
   { link: '', text: 'Kpi6', image: IMAGES_PATH.KPI6, children: 
     [
       { link: '', text: 'Odience', image: IMAGES_PATH.ODIENCE, children: [] },
-      { link: '', text: 'MarketEar', image: '', children: [] },
+      { link: '', text: 'MarketEar', image: IMAGES_PATH.MARKETEAR, children: [] },
     ] 
   },
   { link: '', text: 'Deas SPA', image: IMAGES_PATH.DEAS, children: 
     [
       { link: '', text: 'Orion', image: IMAGES_PATH.ORION, children: [] },
-      { link: '', text: 'Archimede', image: '', children: [] },
+      { link: '', text: 'Archimede', image: IMAGES_PATH.ARCHIMEDE, children: [] },
       { link: '', text: 'Mepawatch', image: '', children: [] },
       { link: '', text: 'Efesto', image: '', children: [] },
     ] 
@@ -129,6 +129,8 @@ function Home() {
   const listRef = useRef<HTMLUListElement | null>(null);
   const listItemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
+
+  
 
 
   const handleActiveItemChange = useCallback((index: number) => {
@@ -189,7 +191,7 @@ function Home() {
           description='I have a strong foundation in various programming languages and frameworks, including JavaScript, Python, Sql. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
           rotatingText={images.map((item) => item.title.toUpperCase())}
         />
-        <div className="col-12 d-flex rounded-3  border-gradient right py-5 col-12 backdrop-blur-5">
+        <div className="col-12 d-flex rounded-3  border-gradient right py-5 col-12 backdrop-blur-50 ">
 
           <div className='home__about__infinite col-12 col-md-9 rounded-3 order-2 order-md-1' style={{ position: 'relative' }}>
             <InfiniteMenu items={images} activeItemChange={(index:number)=> handleActiveItemChange(index)}/>

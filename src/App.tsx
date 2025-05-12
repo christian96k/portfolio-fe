@@ -22,9 +22,9 @@ function App() {
       <ParallaxProvider>
         <GridDistortion
           imageSrc={IMAGES_PATH.BG_PRISM}
-          grid={20}
+          grid={600}
           mouse={0.15}
-          strength={0.15}
+          strength={0.05}
           relaxation={0.9}
           className="custom-class"
           onReady={() => setIsReady(true)} 

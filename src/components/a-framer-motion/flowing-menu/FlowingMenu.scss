@@ -52,7 +52,7 @@
     color: variables.$primary-color;
     background: linear-gradient(to right, 
     variables.$pure-black 0%, 
-    variables.$tertiary-color 50%, 
+    variables.$black-2 50%, 
     variables.$pure-black 100%);
     // font-size: 2vh;
     .menu__item-image-container{
@@ -61,11 +61,16 @@
 
     }
     &:hover {
-      backdrop-filter: blur(100px);
-      background: unset!important;
+      background: linear-gradient(to right, 
+      variables.$pure-black 0%, 
+      variables.$tertiary-color 50%, 
+      variables.$pure-black 100%);
 
       .menu__item-image-container{
-        background: unset!important;
+        background: linear-gradient(to right, 
+        variables.$pure-black 0%, 
+        variables.$black-2 50%, 
+        variables.$pure-black 100%);
 
         position: absolute;
         bottom: -10px;

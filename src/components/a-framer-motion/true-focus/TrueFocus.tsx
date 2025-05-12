@@ -9,6 +9,7 @@ interface TrueFocusProps {
     glowColor?: string;
     animationDuration?: number;
     pauseBetweenAnimations?: number;
+    activeSentence?: string | null;
 }
 
 interface FocusRect {
@@ -26,6 +27,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
     glowColor = "rgba(0, 255, 0, 0.6)",
     animationDuration = 0.5,
     pauseBetweenAnimations = 1,
+    activeSentence = null,
 }) => {
     const words = sentence.split(" ");
     const [currentIndex, setCurrentIndex] = useState<number>(0);
@@ -59,15 +61,26 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
             height: activeRect.height,
         });
 
-        // go to link
-        const link = wordRefs.current[currentIndex]?.getAttribute("href");
-        if (link) {
-            const targetElement = document.querySelector(link);
-            if (targetElement) {
-                targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        // // go to link
+        // const link = wordRefs.current[currentIndex]?.getAttribute("href");
+        // if (link) {
+        //     const targetElement = document.querySelector(link);
+        //     if (targetElement) {
+        //         targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+        //     }
+        // }
+    }, [currentIndex, words.length]);
+
+    // Handlers for active sentence
+
+    useEffect(() => {
+        if (activeSentence) {
+            const index = words.findIndex((word) => word.toLowerCase() === activeSentence.toLowerCase());
+            if (index !== -1) {
+                setCurrentIndex(index);
             }
         }
-    }, [currentIndex, words.length]);
+    }, [activeSentence]);
 
     // Handlers for manual mode (hover)
     const handleMouseEnter = (index: number) => {
