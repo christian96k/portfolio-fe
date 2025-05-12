@@ -189,17 +189,17 @@ function Home() {
           description='I have a strong foundation in various programming languages and frameworks, including JavaScript, Python, Sql. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
           rotatingText={images.map((item) => item.title.toUpperCase())}
         />
-        <div className="col-12 d-flex flex-column rounded-3  border-gradient right py-5 col-12 backdrop-blur-5">
+        <div className="col-12 d-flex rounded-3  border-gradient right py-5 col-12 backdrop-blur-5">
 
           <div className='home__about__infinite col-12 col-md-9 rounded-3 order-2 order-md-1' style={{ position: 'relative' }}>
             <InfiniteMenu items={images} activeItemChange={(index:number)=> handleActiveItemChange(index)}/>
           </div>
 
           <div className="home__about__list  col-12  col-md-3 mb-5 mb-md-0 order-1 order-md-2" >
-            <ul ref={listRef} className="home__about__list pe-2 list-unstyled overflow-y-auto  py-2" >
+            <ul ref={listRef} className="home__about__list pe-2 list-unstyled overflow-y-auto  py-1" >
               {inifiniteMenu.map((item, index) => (
                 <li ref={(el) => { listItemRefs.current[index] = el; }} key={index} className={`d-flex flex-column justify-content-center align-items-center border-gradient backdrop-blur-10 rounded-3  mb-2 p-2 ${item.active ? 'active' : ''}`}>
-                  <img width={30} height={30} src={item.image} alt={item.title} className="img-fluid" />
+                  <img width={20} height={20} src={item.image} alt={item.title} className="img-fluid" />
                   <h6 className="font-size-14">{item.title}</h6>
                 </li>
               ))}

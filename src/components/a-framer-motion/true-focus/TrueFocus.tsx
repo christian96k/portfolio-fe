@@ -29,7 +29,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
 }) => {
     const words = sentence.split(" ");
     const [currentIndex, setCurrentIndex] = useState<number>(0);
-    const [lastActiveIndex, setLastActiveIndex] = useState<number | null>(null);
+    const [, setLastActiveIndex] = useState<number | null>(null);
     const containerRef = useRef<HTMLDivElement | null>(null);
     const wordRefs: React.RefObject <(HTMLSpanElement | null)[]> = useRef([]);
     const [focusRect, setFocusRect] = useState<FocusRect>({ x: 0, y: 0, width: 0, height: 0 });
@@ -77,11 +77,11 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
         }
     };
 
-    const handleMouseLeave = () => {
-        if (manualMode) {
-            setCurrentIndex(lastActiveIndex ?? 0);
-        }
-    };
+    // const handleMouseLeave = () => {
+    //     if (manualMode) {
+    //         setCurrentIndex(lastActiveIndex ?? 0);
+    //     }
+    // };
 
     return (
         <div className="focus-container d-flex gap-4 gap-md-5" ref={containerRef}>
@@ -91,6 +91,7 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
                     <a
                         href={`#` + word.toLowerCase()}
                         key={index}
+                        onClick={() => handleMouseEnter(index)}
                         ref={(el) => { wordRefs.current[index] = el; }}
                         className={`focus-word ${manualMode ? "manual" : ""} ${isActive && !manualMode ? "active" : ""
                             }`}
@@ -107,8 +108,8 @@ const TrueFocus: React.FC<TrueFocusProps> = ({
                             "--border-color": borderColor,
                             "--glow-color": glowColor,
                         } as React.CSSProperties}
-                        onMouseEnter={() => handleMouseEnter(index)}
-                        onMouseLeave={handleMouseLeave}
+                        // onMouseEnter={() => handleMouseEnter(index)}
+                        // onMouseLeave={handleMouseLeave}
                     >
                         {word}
                     </a>

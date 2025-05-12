@@ -10,7 +10,7 @@ const Header = () => {
             <TrueFocus 
                 sentence="HOME CAREER ABOUT PROJECTS"
                 manualMode={true}
-                blurAmount={3}
+                blurAmount={0}
                 borderColor="#017c60"
                 glowColor="#D1D5DB"
                 animationDuration={0.5}

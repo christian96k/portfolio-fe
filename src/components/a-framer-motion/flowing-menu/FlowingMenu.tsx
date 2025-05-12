@@ -110,8 +110,8 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, image, children }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >   
-          <div className="menu__item-image-container d-flex align-items-center gap-1 flex-column justify-content-center border-gradient bottom backdrop-blur-10 p-2  px-3 rounded-3">
-            <img width={75}  src={image} alt="" />
+          <div className="menu__item-image-container d-flex align-items-center gap-1 flex-column justify-content-center border-gradient bottom bg-primary-color-gradient p-2  px-3 rounded-3">
+            <img width={65}  src={image} alt="" />
             <span className="font-size-12">
               {text}
             </span>
