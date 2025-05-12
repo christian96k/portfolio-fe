@@ -45,17 +45,20 @@ pipeline {
             }
         }
 
-        // Stage 3: Rimuovi l'immagine locale dopo il push
-        stage('Remove Local Image') {
+
+        // Stage 3: Remove All Local Images with Same Name
+        stage('Remove All Local Images with Same Name') {
             steps {
-                script {
-                    // Rimuovi l'immagine locale dopo il push al registry
-                    sh "docker rmi ${IMAGE_NAME}:${IMAGE_TAG}"
-                }
+            script {
+                // Rimuovi tutte le immagini locali con lo stesso nome
+                sh """
+                docker images "${IMAGE_NAME}" --format "{{.Repository}}:{{.Tag}}" | xargs -r docker rmi || true
+                """
+            }
             }
         }
 
-        // Stage 5: Deploy dell'immagine sulla VM tramite Docker Compose
+        // Stage 4: Deploy dell'immagine sulla VM tramite Docker Compose
         stage('Deploy on Local VM via Docker Compose') {
             steps {
                 script {
