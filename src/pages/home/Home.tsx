@@ -191,7 +191,7 @@ function Home() {
           description='I have a strong foundation in various programming languages and frameworks, including JavaScript, Python, Sql. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
           rotatingText={images.map((item) => item.title.toUpperCase())}
         />
-        <div className="col-12 d-flex rounded-3  border-gradient right py-5 col-12 backdrop-blur-50 ">
+        <div className="col-12 d-flex flex-column rounded-3  border-gradient right py-5 col-12 backdrop-blur-50 ">
 
           <div className='home__about__infinite col-12 col-md-9 rounded-3 order-2 order-md-1' style={{ position: 'relative' }}>
             <InfiniteMenu items={images} activeItemChange={(index:number)=> handleActiveItemChange(index)}/>
@@ -211,9 +211,6 @@ function Home() {
 
       </section>  
 
-
-      <section>
-      </section>
 
       <section id='projects' className="home__projects d-flex flex-column justify-content-center align-items-center">
 
