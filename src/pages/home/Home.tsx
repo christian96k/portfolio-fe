@@ -222,12 +222,12 @@ function Home() {
         />
 
         {/* TODO: refacor as atomic components  */}
-        <div className="home__projects__folder border-gradient left backdrop-blur-50 rounded-3  mt-5 py-5">
-            <div className="col-12">
+        <div className="home__projects__folder  mt-5 py-5">
+            <div className="col-12 pb-5">
               <h4 className="text-center"> {'Discover some recent personal projects'}</h4>
             </div>
-          <div className="row justify-content-center gap-5" style={{ height: '200px', width: '80vw', position: 'relative' }}>
-            <div className="home__projects__folder__item col-12 py-5 col-md-3 d-flex justify-content-center align-items-center">
+          <div className="row justify-content-center row gap-5" style={{ height: '100%', width: '80vw', position: 'relative' }}>
+            <div className="home__projects__folder__item  border-gradient right backdrop-blur-50 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
               <Folder size={1.3} items={[
                  <a href="#projects" className="d-flex  justify-content-center align-items-center">
                     <img className="img-fluid rounded-1" width={55} src={IMAGES_PATH.COMING_SOON} />
@@ -241,7 +241,7 @@ function Home() {
               ]} color="#017c60" title={'3D'} className="custom-folder" />
             </div>
 
-            <div className="col-12 col-md-3 d-flex justify-content-center align-items-center">
+            <div className=" border-gradient right backdrop-blur-50 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
               <Folder size={1.3} color="#017c60" items={[
                 <a target="blank" href="https://www.figma.com/design/UxtItKtgcIStcWorYC73yy/PORTFOLIO-GRAPHIC-DESIGNER?node-id=0-1&t=rbzJm5L8nA42aPwL-1" className="d-flex  justify-content-center align-items-center">
                   <img className="img-fluid rounded-1" width={60} src={IMAGES_PATH.UX_UI} />
@@ -255,7 +255,7 @@ function Home() {
               ]} title={'Web'} className="custom-folder" />
             </div>
 
-            <div className="col-12  col-md-3 d-flex justify-content-center align-items-center">
+            <div className=" border-gradient right backdrop-blur-50 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
               <Folder size={1.3} color="#017c60"
                 items={[
                   <a target="blank" href="https://gitlab.com/ChristianCastro96" className="d-flex  justify-content-center align-items-center">
