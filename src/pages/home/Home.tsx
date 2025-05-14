@@ -192,9 +192,9 @@ function Home() {
           description='I have a strong foundation in various programming languages and frameworks, including JavaScript, Python, Sql. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
           rotatingText={images.map((item) => item.title.toUpperCase())}
         />
-        <div className="col-12 d-flex flex-column flex-md-row rounded-3  border-gradient right py-3 py-md-5 col-12 backdrop-blur-50 ">
+        <div className="col-12 d-flex flex-column flex-md-row rounded-3  border-gradient right py-3 py-md-5 col-12 backdrop-blur-10 ">
 
-          <div className='home__about__infinite col-12 col-md-9 rounded-3 order-2 order-md-1' style={{ position: 'relative' }}>
+          <div className='home__about__infinite p-4 p-md-1 col-12 col-md-9 rounded-3 order-2 order-md-1' style={{ position: 'relative' }}>
             <InfiniteMenu items={images} activeItemChange={(index:number)=> handleActiveItemChange(index)}/>
           </div>
 
@@ -227,7 +227,7 @@ function Home() {
               <h4 className="text-center"> {'Discover some recent personal projects'}</h4>
             </div>
           <div className="row justify-content-center row gap-5" style={{ height: '100%', width: '80vw', position: 'relative' }}>
-            <div className="home__projects__folder__item  border-gradient right backdrop-blur-50 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
+            <div className="home__projects__folder__item  border-gradient right backdrop-blur-10 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
               <Folder size={1.3} items={[
                  <a href="#projects" className="d-flex  justify-content-center align-items-center">
                     <img className="img-fluid rounded-1" width={55} src={IMAGES_PATH.COMING_SOON} />
@@ -241,7 +241,7 @@ function Home() {
               ]} color="#017c60" title={'3D'} className="custom-folder" />
             </div>
 
-            <div className=" border-gradient right backdrop-blur-50 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
+            <div className=" border-gradient right backdrop-blur-10 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
               <Folder size={1.3} color="#017c60" items={[
                 <a target="blank" href="https://www.figma.com/design/UxtItKtgcIStcWorYC73yy/PORTFOLIO-GRAPHIC-DESIGNER?node-id=0-1&t=rbzJm5L8nA42aPwL-1" className="d-flex  justify-content-center align-items-center">
                   <img className="img-fluid rounded-1" width={60} src={IMAGES_PATH.UX_UI} />
@@ -255,7 +255,7 @@ function Home() {
               ]} title={'Web'} className="custom-folder" />
             </div>
 
-            <div className=" border-gradient right backdrop-blur-50 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
+            <div className=" border-gradient right backdrop-blur-10 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
               <Folder size={1.3} color="#017c60"
                 items={[
                   <a target="blank" href="https://gitlab.com/ChristianCastro96" className="d-flex  justify-content-center align-items-center">
