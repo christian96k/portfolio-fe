@@ -51,4 +51,14 @@
             }
         }
     }
+
+
+    &__projects{
+        .row{
+
+            gap: 8rem!important;
+        }
+        &__folder{
+        }
+    }
 }

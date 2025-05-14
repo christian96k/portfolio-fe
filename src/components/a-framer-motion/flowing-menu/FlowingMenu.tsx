@@ -86,9 +86,9 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, image, children }) => {
     return Array.from({ length: 4 }).map((_, idx) => (
       <React.Fragment key={idx}>
         {/* <span>{text}</span> */}
-        <div className="children d-flex gap-5 align-items-center">
+        <div className="children d-flex gap-md-5 align-items-center">
             { children.map((child, index) => (
-                <div key={index} className="children__item text-center mx-3">
+                <div key={index} className="children__item text-center mx-1 mx-md-4">
                     <img className="img-fluid" height={55}  width={70} src={child.image} alt="" />
                     {/* <span className="font-size-12">{child.text}</span> */}
                 </div>

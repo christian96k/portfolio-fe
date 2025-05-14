@@ -37,6 +37,18 @@ import WHIRLPOOL from '../../assets/images/companies/whirlpool-logo.png';
 import INDESIT from '../../assets/images/companies/indesit-logo.png';
 import RESERVARE from '../../assets/images/companies/reservare-logo.png';
 
+
+import UX_UI from '../../assets/images/projects/ux-ui.jpg';
+import UI from '../../assets/images/projects/ui.jpg';
+import METRO_GRAPH from '../../assets/images/projects/metro-graph.jpg';
+import GIT_HUB from '../../assets/images/projects/github.jpg';
+import GIT_LAB from '../../assets/images/projects/gitlab.jpg';
+import MITRE from '../../assets/images/projects/mitre.jpg';
+import PROTO_3D from '../../assets/images/projects/3d.jpg';
+import MOTO_3D from '../../assets/images/projects/3d-moto.jpg';
+import COMING_SOON from '../../assets/images/projects/coming-soon.webp';
+
+
 import BG_BLACK from '../../assets/images/utils/bg-black.jpg';
 import BG_GLITCH from '../../assets/images/utils/bg-glitch.png';
 import BG_PRISM from '../../assets/images/utils/bg-prism.jpg';
@@ -85,6 +97,19 @@ export const IMAGES_PATH = {
     // project
     ODIENCE: ODIENCE,
     MARKETEAR: MARKETEAR,
+
+
+    // showcase projects
+    UX_UI: UX_UI,
+    UI: UI, 
+    METRO_GRAPH: METRO_GRAPH,
+    GIT_HUB: GIT_HUB,
+    GIT_LAB: GIT_LAB,
+    MITRE: MITRE,
+    PROTO_3D: PROTO_3D,
+    MOTO_3D: MOTO_3D,
+    COMING_SOON: COMING_SOON,
+
 
     // ----- utils
     BG_BLACK:BG_BLACK,

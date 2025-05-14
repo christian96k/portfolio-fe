@@ -2,6 +2,13 @@ import { useState, useRef, useEffect } from "react";
 import TrueFocus from "../a-framer-motion/true-focus/TrueFocus";
 import "./Header.scss";
 
+export const HEADER_MENU:string[] = [
+    "HOME",  
+    "CAREER",
+    "ABOUT",
+    "PROJECTS"
+]
+
 const Header = () => {
 
     const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -43,11 +50,8 @@ const Header = () => {
 
     return(
         <header className="header w-100 py-3 d-flex gap-3 gap-md-3 justify-content-center align-items-center">
-            {/* <div className="header__logo">
-                <img src="./public/favicon.ico" alt="Logo" />
-            </div> */}
             <TrueFocus 
-                sentence="HOME CAREER ABOUT PROJECTS"
+                sentence={HEADER_MENU.join(' ')}
                 activeSentence={activeSection}
                 manualMode={true}
                 blurAmount={0}
@@ -56,14 +60,6 @@ const Header = () => {
                 animationDuration={0.5}
                 pauseBetweenAnimations={1}
             />
-            {/* <nav className="header__nav w-100">
-                <ul className="list-unstyled font-size-24 d-flex justify-content-center gap-3 gap-md-5 m-0">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav> */}
         </header>
     )
 }

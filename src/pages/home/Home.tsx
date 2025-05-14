@@ -8,6 +8,7 @@ import { IMAGES_PATH } from "../../core/constants/images.path";
 
 import "./Home.scss";
 import FlowingMenu from "../../components/a-framer-motion/flowing-menu/FlowingMenu";
+import Folder from "../../components/a-framer-motion/folder/Folder";
 
 const images: MenuItem[] = [
   {
@@ -191,7 +192,7 @@ function Home() {
           description='I have a strong foundation in various programming languages and frameworks, including JavaScript, Python, Sql. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
           rotatingText={images.map((item) => item.title.toUpperCase())}
         />
-        <div className="col-12 d-flex flex-column rounded-3  border-gradient right py-5 col-12 backdrop-blur-50 ">
+        <div className="col-12 d-flex flex-column flex-md-row rounded-3  border-gradient right py-3 py-md-5 col-12 backdrop-blur-50 ">
 
           <div className='home__about__infinite col-12 col-md-9 rounded-3 order-2 order-md-1' style={{ position: 'relative' }}>
             <InfiniteMenu items={images} activeItemChange={(index:number)=> handleActiveItemChange(index)}/>
@@ -220,8 +221,60 @@ function Home() {
           rotatingText={['Metro Graph', 'Scripting Utils', 'Libraries']}
         />
 
-        <h3 className="text-center"> {'WORK IN PROGRESS'}</h3>
+        {/* TODO: refacor as atomic components  */}
+        <div className="home__projects__folder border-gradient left backdrop-blur-50 rounded-3  mt-5 py-5">
+            <div className="col-12">
+              <h4 className="text-center"> {'Discover some recent personal projects'}</h4>
+            </div>
+          <div className="row justify-content-center gap-5" style={{ height: '200px', width: '80vw', position: 'relative' }}>
+            <div className="home__projects__folder__item col-12 py-5 col-md-3 d-flex justify-content-center align-items-center">
+              <Folder size={1.3} items={[
+                 <a href="#projects" className="d-flex  justify-content-center align-items-center">
+                    <img className="img-fluid rounded-1" width={55} src={IMAGES_PATH.COMING_SOON} />
+                  </a>,
+                  <a href="#projects" className="d-flex  justify-content-center align-items-center">
+                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.PROTO_3D} />
+                  </a>,
+                  <a href="#projects" className="d-flex  justify-content-center align-items-center">
+                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.MOTO_3D} />
+                  </a>,
+              ]} color="#017c60" title={'3D'} className="custom-folder" />
+            </div>
 
+            <div className="col-12 col-md-3 d-flex justify-content-center align-items-center">
+              <Folder size={1.3} color="#017c60" items={[
+                <a target="blank" href="https://www.figma.com/design/UxtItKtgcIStcWorYC73yy/PORTFOLIO-GRAPHIC-DESIGNER?node-id=0-1&t=rbzJm5L8nA42aPwL-1" className="d-flex  justify-content-center align-items-center">
+                  <img className="img-fluid rounded-1" width={60} src={IMAGES_PATH.UX_UI} />
+                </a>,
+                <a target="blank" href="#projects" className="d-flex  justify-content-center align-items-center">
+                  <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.MITRE} />
+                </a>,
+                <a target="blank" href="http://64.227.68.251:5173/" className="d-flex  justify-content-center align-items-center">
+                  <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.METRO_GRAPH} />
+                </a>
+              ]} title={'Web'} className="custom-folder" />
+            </div>
+
+            <div className="col-12  col-md-3 d-flex justify-content-center align-items-center">
+              <Folder size={1.3} color="#017c60"
+                items={[
+                  <a target="blank" href="https://gitlab.com/ChristianCastro96" className="d-flex  justify-content-center align-items-center">
+                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.GIT_LAB} />
+                  </a>,
+                  <a target="blank" href="https://github.com/christian96k" className="d-flex  justify-content-center align-items-center">
+                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.MITRE} />
+                  </a>,
+                  <a target="blank" href="https://github.com/christian96k" className="d-flex  justify-content-center align-items-center">
+                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.GIT_HUB} />
+                  </a>
+                ]}
+                title={'Git'} className="custom-folder" />
+            </div>
+          </div>
+
+        </div>
+
+       
 
       </section>  
 
