@@ -76,32 +76,33 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        cache_size=$(docker system df --format "{{.BuildCacheSize}}")
+                        cache_size=$(docker system df | grep "Build Cache" | awk '{print $4}')
+                        echo "Build cache size: $cache_size"
 
                         num=$(echo $cache_size | grep -o -E '[0-9.]+')
-                        unit=$(echo $cache_size | grep -o -E '[A-Z]+')
+                        unit=$(echo $cache_size | grep -o -E '[A-Za-z]+')
 
                         case $unit in
-                        GB) size_in_bytes=$(echo "$num * 1024 * 1024 * 1024" | bc) ;;
-                        MB) size_in_bytes=$(echo "$num * 1024 * 1024" | bc) ;;
-                        KB) size_in_bytes=$(echo "$num * 1024" | bc) ;;
-                        B)  size_in_bytes=$num ;;
-                        *)  size_in_bytes=0 ;;
+                        GB) size_bytes=$(echo "$num * 1024 * 1024 * 1024" | bc) ;;
+                        MB) size_bytes=$(echo "$num * 1024 * 1024" | bc) ;;
+                        KB) size_bytes=$(echo "$num * 1024" | bc) ;;
+                        B)  size_bytes=$num ;;
+                        *)  size_bytes=0 ;;
                         esac
 
                         threshold=$((1 * 1024 * 1024 * 1024))
 
-                        if (( $(echo "$size_in_bytes > $threshold" | bc -l) )); then
-                        echo "Build cache $cache_size supera 1GB, pulisco..."
+                        if (( $(echo "$size_bytes > $threshold" | bc -l) )); then
+                        echo "Build cache supera 1GB, pulisco..."
                         docker builder prune -f
                         else
-                        echo "Build cache $cache_size sotto 1GB, niente pulizia."
+                        echo "Build cache sotto 1GB, niente pulizia."
                         fi
-
                     '''
                 }
             }
         }
+
 
     }
 
