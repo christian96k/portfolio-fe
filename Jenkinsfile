@@ -76,9 +76,10 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        cache_size_bytes=$(docker system df -v | grep 'Build Cache' | awk '{print $4 $5}')
-                        num=$(echo $cache_size_bytes | grep -o -E '[0-9.]+')
-                        unit=$(echo $cache_size_bytes | grep -o -E '[A-Z]+')
+                        cache_size=$(docker system df --format "{{.BuildCacheSize}}")
+
+                        num=$(echo $cache_size | grep -o -E '[0-9.]+')
+                        unit=$(echo $cache_size | grep -o -E '[A-Z]+')
 
                         case $unit in
                         GB) size_in_bytes=$(echo "$num * 1024 * 1024 * 1024" | bc) ;;
@@ -91,11 +92,12 @@ pipeline {
                         threshold=$((1 * 1024 * 1024 * 1024))
 
                         if (( $(echo "$size_in_bytes > $threshold" | bc -l) )); then
-                        echo "Build cache $cache_size_bytes supera 1GB, pulisco..."
+                        echo "Build cache $cache_size supera 1GB, pulisco..."
                         docker builder prune -f
                         else
-                        echo "Build cache $cache_size_bytes sotto 1GB, niente pulizia."
+                        echo "Build cache $cache_size sotto 1GB, niente pulizia."
                         fi
+
                     '''
                 }
             }
