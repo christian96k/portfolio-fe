@@ -76,7 +76,7 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        cache_size=$(docker system df | grep "Build Cache" | awk '{print $4}')
+                        cache_size=$(docker system df | grep "Build Cache" | tr -s ' ' | cut -d' ' -f5)
                         echo "Build cache size: $cache_size"
 
                         num=$(echo $cache_size | grep -o -E '[0-9.]+')
@@ -102,6 +102,7 @@ pipeline {
                 }
             }
         }
+
 
 
     }
