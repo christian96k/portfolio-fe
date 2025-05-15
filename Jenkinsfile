@@ -92,7 +92,7 @@ pipeline {
 
                         threshold=$((1 * 1024 * 1024 * 1024))
 
-                        if (( $(echo "$size_bytes > $threshold" | bc -l) )); then
+                        if [ "$(echo "$size_bytes > $threshold" | bc -l)" = "1" ]; then
                         echo "Build cache supera 1GB, pulisco..."
                         docker builder prune -f
                         else
@@ -102,6 +102,7 @@ pipeline {
                 }
             }
         }
+
 
 
 
