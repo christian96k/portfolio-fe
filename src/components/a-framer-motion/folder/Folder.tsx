@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Folder.scss";
 
-interface FolderProps {
+export interface FolderProps {
   color?: string;
   size?: number;
   items?: React.ReactNode[];
@@ -53,6 +53,29 @@ const Folder: React.FC<FolderProps> = ({
   const paper2 = darkenColor("#ffffff", 0.05);
   const paper3 = "#ffffff";
 
+
+  const folderRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setOpen(entry.isIntersecting); 
+      },
+      {
+        threshold: 0.3, 
+      }
+    );
+
+    if (folderRef.current) 
+      observer.observe(folderRef.current);
+
+    return () => {
+      if (folderRef.current) 
+        observer.unobserve(folderRef.current);
+    };
+  }, []);
+
+
   const handleClick = () => {
     setOpen((prev) => !prev);
     if (open) {
@@ -101,7 +124,7 @@ const Folder: React.FC<FolderProps> = ({
   const scaleStyle = { transform: `scale(${size})` };
 
   return (
-    <div style={scaleStyle} className={className}>
+    <div style={scaleStyle} ref={folderRef} className={className}>
       <div
         className={folderClassName}
         style={folderStyle}
@@ -122,10 +145,6 @@ const Folder: React.FC<FolderProps> = ({
                     } as React.CSSProperties)
                   : {}
               }
-              onClick={(e) => {
-                e.stopPropagation();
-                  console.log(`Clicked on item ${i + 1}`);
-              }}
             >
               {item} 
             </div>

@@ -1,137 +1,22 @@
 
+import "./Home.scss";
 import { useCallback, useRef, useState } from "react";
 import InfiniteMenu, { MenuItem } from "../../components/a-framer-motion/infinite-menu/InfiniteMenu";
 import ContentDetail from "../../components/content-detail/ContentDetail";
 import ContentHeading from "../../components/content-heading/ContentHeading";
 import Header from "../../components/header/Header";
 import { IMAGES_PATH } from "../../core/constants/images.path";
-
-import "./Home.scss";
 import FlowingMenu from "../../components/a-framer-motion/flowing-menu/FlowingMenu";
 import Folder from "../../components/a-framer-motion/folder/Folder";
-
-const images: MenuItem[] = [
-  {
-    active: false,
-    image: IMAGES_PATH.PHP,
-    link: 'https://www.php.net/',
-    title: 'PHP',
-    description: 'Developed several web applications using PHP, including a content management system and a customer relationship management tool.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.LARAVEL,
-    link: 'https://laravel.com/',
-    title: 'Laravel',
-    description: 'Created multiple applications using Laravel, including a task management system and an online booking platform.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.DIGITAL_OCEAN,
-    link: 'https://www.digitalocean.com/',
-    title: 'Digital Ocean',
-    description: 'Deployed and managed applications on Digital Ocean, utilizing their cloud infrastructure for scalability and reliability.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.VUE,
-    link: 'https://vuejs.org/',
-    title: 'Vue',
-    description: 'Created multiple applications using Vue, including a blogging platform and an online store.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.REACT,
-    link: 'https://reactjs.org/',
-    title: 'React',
-    description: 'Developed several web applications using React, including a social media platform and a project management tool.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.ANGULAR,
-    link: 'https://angular.io/',
-    title: 'Angular',
-    description: 'Built numerous applications using Angular, including a large-scale e-commerce platform and a real-time chat application.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.PYTHON,
-    link: 'https://www.python.org/',
-    title: 'Python',
-    description: 'Developed several applications using Python, including a data analysis tool and a web scraping script.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.MY_SQL,
-    link: 'https://www.mysql.com/',
-    title: 'MySQL',
-    description: 'Designed and implemented databases using MySQL for various applications.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.PG,
-    link: 'https://www.postgresql.org/',
-    title: 'PostgreSQL',
-    description: 'Utilized PostgreSQL for database management in several projects.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.JENKINS,
-    link: 'https://www.jenkins.io/',
-    title: 'Jenkins',
-    description: 'Implemented continuous integration and continuous deployment pipelines using Jenkins for various projects.'
-  },
-  {
-    active: false,
-    image: IMAGES_PATH.DOCKER,
-    link: 'https://www.docker.com/',
-    title: 'Docker',
-    description: 'Utilized Docker for containerization of applications, enabling easy deployment and scaling.'
-  },
-];
+import ContentItem from "../../components/content-item/ContentItem";
+import { INFINITE_MENU_IMAGES, COMPANY_PROJECTS, PERSONAL_PROJECTS } from "../../core/data/data.set";
 
 
-const companyProjects = [
-  { link: '', text: 'Taal', image: IMAGES_PATH.TAAL, children: 
-    [
-      { link: '', text: 'Whirlpool', image: IMAGES_PATH.WHIRLPOOL, children: [] },
-      { link: '', text: 'Indesit', image: IMAGES_PATH.INDESIT, children: [] },
-      { link: '', text: 'Reservare', image: IMAGES_PATH.RESERVARE, children: [] }
-
-    ]
-  },
-  { link: '', text: 'Accenture', image: IMAGES_PATH.ACCENTURE, children: 
-    [
-      { link: '', text: 'NewHolland', image: IMAGES_PATH.NHHOLLAND, children: [] },
-      { link: '', text: 'Caseih', image: IMAGES_PATH.CASEIH, children: [] },
-      { link: '', text: 'NH Construction', image: IMAGES_PATH.NHOLLAND_CON, children: [] },
-      { link: '', text: 'Caseih Construction', image: IMAGES_PATH.CASEIH_CON, children: [] }
-    ] 
-  },
-  { link: '', text: 'Kpi6', image: IMAGES_PATH.KPI6, children: 
-    [
-      { link: '', text: 'Odience', image: IMAGES_PATH.ODIENCE, children: [] },
-      { link: '', text: 'MarketEar', image: IMAGES_PATH.MARKETEAR, children: [] },
-    ] 
-  },
-  { link: '', text: 'Deas SPA', image: IMAGES_PATH.DEAS, children: 
-    [
-      { link: '', text: 'Orion', image: IMAGES_PATH.ORION, children: [] },
-      { link: '', text: 'Archimede', image: IMAGES_PATH.ARCHIMEDE, children: [] },
-      { link: '', text: 'Mepawatch', image: '', children: [] },
-      { link: '', text: 'Efesto', image: '', children: [] },
-    ] 
-  },
- 
-];
 
 function Home() {
-  const [inifiniteMenu, setInfiniteMenu] = useState<MenuItem[]>(images);
+  const [inifiniteMenu, setInfiniteMenu] = useState<MenuItem[]>(INFINITE_MENU_IMAGES);
   const listRef = useRef<HTMLUListElement | null>(null);
   const listItemRefs = useRef<(HTMLLIElement | null)[]>([]);
-
-
-  
 
 
   const handleActiveItemChange = useCallback((index: number) => {
@@ -151,12 +36,12 @@ function Home() {
   
   return (
     <main className="home">
-
+      {/* HEADER */}
       <div className="home__header col-12">
         <Header/>
       </div>
 
-
+      {/* HOME */}
       <section id='home' className="home__introduction d-flex flex-column justify-content-center align-items-center">
 
         <ContentHeading 
@@ -174,28 +59,28 @@ function Home() {
 
       </section>  
 
-
+      {/* CAREER */}
       <section className="home__career" id="career">
         <ContentHeading 
           title='Career'
           description='During my career, I have had the opportunity to work with various companies and clients, including Taal, Accenture, Kpi6, and Deas SPA. I have been involved in projects for well-known brands such as Whirlpool, Indesit, New Holland, Case IH, and many others.'
         />
         <div className="col-12 " style={{ height: '600px', position: 'relative' }}>
-          <FlowingMenu items={companyProjects} />
+          <FlowingMenu items={COMPANY_PROJECTS} />
         </div>
       </section>
 
-
+      {/* ABOUT */}
       <section id='about' className="home__about m-0 row justify-content-center align-items-center">
         <ContentHeading 
           title='Technical Skills'
           description='I have a strong foundation in various programming languages and frameworks, including JavaScript, Python, Sql. I am also proficient in using tools such as Docker, Jenkins, and Git for version control and continuous integration.'
-          rotatingText={images.map((item) => item.title.toUpperCase())}
+          rotatingText={INFINITE_MENU_IMAGES.map((item) => item.title.toUpperCase())}
         />
         <div className="col-12 d-flex flex-column flex-md-row rounded-3  border-gradient right py-3 py-md-5 col-12 backdrop-blur-10 ">
 
           <div className='home__about__infinite p-4 p-md-1 col-12 col-md-9 rounded-3 order-2 order-md-1' style={{ position: 'relative' }}>
-            <InfiniteMenu items={images} activeItemChange={(index:number)=> handleActiveItemChange(index)}/>
+            <InfiniteMenu items={INFINITE_MENU_IMAGES} activeItemChange={(index:number)=> handleActiveItemChange(index)}/>
           </div>
 
           <div className="home__about__list  col-12  col-md-3 mb-5 mb-md-0 order-1 order-md-2" >
@@ -212,7 +97,7 @@ function Home() {
 
       </section>  
 
-
+      {/* PROJECTS */}        
       <section id='projects' className="home__projects d-flex flex-column justify-content-center align-items-center">
 
         <ContentHeading 
@@ -221,65 +106,31 @@ function Home() {
           rotatingText={['Metro Graph', 'Scripting Utils', 'Libraries']}
         />
 
-        {/* TODO: refacor as atomic components  */}
         <div className="home__projects__folder  mt-5 py-5">
-            <div className="col-12 pb-5">
-              <h4 className="text-center"> {'Discover some recent personal projects'}</h4>
-            </div>
-          <div className="row justify-content-center row gap-5" style={{ height: '100%', width: '80vw', position: 'relative' }}>
-            <div className="home__projects__folder__item  border-gradient right backdrop-blur-10 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
-              <Folder size={1.3} items={[
-                 <a href="#projects" className="d-flex  justify-content-center align-items-center">
-                    <img className="img-fluid rounded-1" width={55} src={IMAGES_PATH.COMING_SOON} />
-                  </a>,
-                  <a href="#projects" className="d-flex  justify-content-center align-items-center">
-                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.PROTO_3D} />
-                  </a>,
-                  <a href="#projects" className="d-flex  justify-content-center align-items-center">
-                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.MOTO_3D} />
-                  </a>,
-              ]} color="#017c60" title={'3D'} className="custom-folder" />
-            </div>
-
-            <div className=" border-gradient right backdrop-blur-10 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
-              <Folder size={1.3} color="#017c60" items={[
-                <a target="blank" href="https://www.figma.com/design/UxtItKtgcIStcWorYC73yy/PORTFOLIO-GRAPHIC-DESIGNER?node-id=0-1&t=rbzJm5L8nA42aPwL-1" className="d-flex  justify-content-center align-items-center">
-                  <img className="img-fluid rounded-1" width={60} src={IMAGES_PATH.UX_UI} />
-                </a>,
-                <a target="blank" href="#projects" className="d-flex  justify-content-center align-items-center">
-                  <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.MITRE} />
-                </a>,
-                <a target="blank" href="http://64.227.68.251:5173/" className="d-flex  justify-content-center align-items-center">
-                  <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.METRO_GRAPH} />
-                </a>
-              ]} title={'Web'} className="custom-folder" />
-            </div>
-
-            <div className=" border-gradient right backdrop-blur-10 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
-              <Folder size={1.3} color="#017c60"
-                items={[
-                  <a target="blank" href="https://gitlab.com/ChristianCastro96" className="d-flex  justify-content-center align-items-center">
-                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.GIT_LAB} />
-                  </a>,
-                  <a target="blank" href="https://github.com/christian96k" className="d-flex  justify-content-center align-items-center">
-                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.MITRE} />
-                  </a>,
-                  <a target="blank" href="https://github.com/christian96k" className="d-flex  justify-content-center align-items-center">
-                    <img className="img-fluid rounded-1" width={65} src={IMAGES_PATH.GIT_HUB} />
-                  </a>
-                ]}
-                title={'Git'} className="custom-folder" />
-            </div>
+          <div className="col-12 pb-5">
+            <h4 className="text-center"> {'Discover some recent personal projects'}</h4>
           </div>
-
+          
+          <div className="row justify-content-center row gap-5" style={{ height: '100%', width: '80vw', position: 'relative' }}>
+            {PERSONAL_PROJECTS.map((project, index) => 
+              <div key={`${index}-${project.title}`} className="border-gradient right backdrop-blur-10 rounded-3 py-5 col-12 col-md-3 d-flex justify-content-center align-items-center">
+                <Folder title={project.title} size={project.size} color={project.color} items={
+                  project.items.map((item, index) => (
+                    <ContentItem
+                      key={`${index}-${item.src}`}
+                      src={item.src}
+                      alt={item.alt}
+                      href={item.href}
+                      imgWidth={item.imgWidth}
+                    />
+                  ))
+                } />
+              </div>
+            )}
+          </div>
         </div>
-
-       
-
       </section>  
 
-
-     
     </main>
   )
 }

@@ -85,20 +85,13 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, image, children }) => {
   const repeatedMarqueeContent = React.useMemo(() => {
     return Array.from({ length: 4 }).map((_, idx) => (
       <React.Fragment key={idx}>
-        {/* <span>{text}</span> */}
         <div className="children d-flex gap-md-5 align-items-center">
             { children.map((child, index) => (
                 <div key={index} className="children__item text-center mx-1 mx-md-4">
-                    <img className="img-fluid" height={55}  width={70} src={child.image} alt="" />
-                    {/* <span className="font-size-12">{child.text}</span> */}
+                    <img className="img-fluid" height={60}  width={80} src={child.image} alt="" />
                 </div>
             ))}
         </div>
-               
-        {/* <div
-          className="marquee__img rounded-3"
-          style={{ backgroundImage: `url(${image})` }}
-        /> */}
       </React.Fragment>
     ));
   }, [text, image, children]);
@@ -111,7 +104,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ text, image, children }) => {
             onMouseLeave={handleMouseLeave}
         >   
           <div className="menu__item-image-container d-flex align-items-center gap-1 flex-column justify-content-center border-gradient bottom backdrop-blur-100 p-2  px-3 rounded-3">
-            <img width={65}  src={image} alt="" />
+            <img width={85}  src={image} alt="" />
             <span className="font-size-12">
               {text}
             </span>

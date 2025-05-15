@@ -6,7 +6,7 @@
     section{
         padding: 8rem  4rem;
         @include viewport.custom-media-breakpoint-down(lg) {
-            padding: 6rem 2rem;
+            padding: 6rem 1.5rem;
         }
     }
     &__introduction{

@@ -40,8 +40,8 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    border-bottom: 20px solid variables.$pure-black;
-    border-top: 20px solid variables.$pure-black;
+    border-bottom: 17px solid variables.$pure-black;
+    border-top: 17px solid variables.$pure-black;
 
     position: relative;
     cursor: pointer;
@@ -124,7 +124,7 @@
     height: 100%;
     width: 200%;
     will-change: transform;
-    animation: marquee 15s linear infinite;
+    animation: marquee 45s linear infinite;
   }
   
   .marquee span {
