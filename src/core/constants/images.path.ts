@@ -6,7 +6,7 @@ import REACT from '../../assets/images/stacks/react-logo.svg';
 import VUE from '../../assets/images/stacks/vue-logo.svg';
 import PHP from '../../assets/images/stacks/php-logo.svg';
 import LARAVEL from '../../assets/images/stacks/laravel-logo.svg';
-
+import THREE_JS from '../../assets/images/stacks/three-js-logo.svg';
 
 import JENKINS from '../../assets/images/stacks/jenkins-logo.svg';
 import DOCKER from '../../assets/images/stacks/docker-logo.svg';
@@ -32,6 +32,9 @@ import MARKETEAR from '../../assets/images/companies/marketear-logo.png';
 
 import ORION from '../../assets/images/companies/orion-logo.png';
 import ARCHIMEDE from '../../assets/images/companies/archimede-logo.png';
+import MWATCH from '../../assets/images/companies/mwatch-logo.png';
+import CWATCH from '../../assets/images/companies/cwatch-logo.png';
+import EFESTO from '../../assets/images/companies/efesto-logo.png';
 
 import WHIRLPOOL from '../../assets/images/companies/whirlpool-logo.png';
 import INDESIT from '../../assets/images/companies/indesit-logo.png';
@@ -64,6 +67,7 @@ export const IMAGES_PATH = {
     VUE: VUE,
     PHP: PHP,
     LARAVEL: LARAVEL,
+    THREE_JS: THREE_JS,
 
     JENKINS: JENKINS,
     DOCKER: DOCKER,
@@ -79,6 +83,9 @@ export const IMAGES_PATH = {
     // project 
     ORION: ORION,
     ARCHIMEDE: ARCHIMEDE,
+    MWATCH: MWATCH,
+    CWATCH: CWATCH,
+    EFESTO: EFESTO,
 
     ACCENTURE: ACCENTURE,
     // project 

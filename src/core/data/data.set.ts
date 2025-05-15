@@ -80,6 +80,13 @@ export const INFINITE_MENU_IMAGES: MenuItem[] = [
     title: 'Docker',
     description: 'Utilized Docker for containerization of applications, enabling easy deployment and scaling.'
   },
+  {
+    active: false,
+    image: IMAGES_PATH.THREE_JS,
+    link: 'https://threejs.org/',
+    title: 'Three.js',
+    description: 'Developed interactive 3D visualizations and animations for the web using Three.js, including product showcases and creative portfolio elements.'
+  },
 ];
 
 export const COMPANY_PROJECTS: {
@@ -87,10 +94,10 @@ export const COMPANY_PROJECTS: {
     text: string;
     image: string;
     children: {
-        link: string;
-        text: string;
-        image: string;
-        children: never[];
+      link: string;
+      text: string;
+      image: string;
+      children: never[];
     }[];
 }[] = [
   { link: '', text: 'Taal', image: IMAGES_PATH.TAAL, children: 
@@ -119,8 +126,10 @@ export const COMPANY_PROJECTS: {
     [
       { link: '', text: 'Orion', image: IMAGES_PATH.ORION, children: [] },
       { link: '', text: 'Archimede', image: IMAGES_PATH.ARCHIMEDE, children: [] },
-      { link: '', text: 'Mepawatch', image: '', children: [] },
-      { link: '', text: 'Efesto', image: '', children: [] },
+      { link: '', text: 'Mepawatch', image: IMAGES_PATH.MWATCH, children: [] },
+      { link: '', text: 'Efesto', image: IMAGES_PATH.EFESTO, children: [] },
+      { link: '', text: 'Efesto', image: IMAGES_PATH.CWATCH, children: [] },
+
     ] 
   },
  
