@@ -792,7 +792,7 @@ class InfiniteGridMenu {
   private movementActive = false;
 
   private TARGET_FRAME_DURATION = 1000 / 60; // 60 fps
-  private SPHERE_RADIUS = 2;
+  private SPHERE_RADIUS = 1;
 
   private activeIndex: number = -1;
   private isCanvasVisible: boolean = false;
@@ -827,6 +827,15 @@ class InfiniteGridMenu {
     this.init(onInit);
     
   }
+
+  public focusOnItem(index: number) {
+    if (index < 0 || index >= this.instancePositions.length) return;
+
+    const targetPosition = this.instancePositions[index];
+    const direction = vec3.normalize(vec3.create(), targetPosition);
+    this.control.snapTargetDirection = direction;
+  }
+
 
   public resize(): void {
     const needsResize = resizeCanvasToDisplaySize(this.canvas);
@@ -934,8 +943,8 @@ class InfiniteGridMenu {
 
     this.icoGeo = new IcosahedronGeometry();
     this.icoGeo.subdivide(1).spherize(this.SPHERE_RADIUS);
-    this.instancePositions = this.icoGeo.vertices.map((v) => v.position);
-    this.DISC_INSTANCE_COUNT = this.icoGeo.vertices.length;
+    this.instancePositions = this.icoGeo.vertices.map((v) => v.position).slice(0, this.items.length);
+    this.DISC_INSTANCE_COUNT = this.instancePositions.length;
     this.initDiscInstances(this.DISC_INSTANCE_COUNT);
 
     // Texture
