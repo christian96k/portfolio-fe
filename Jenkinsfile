@@ -59,10 +59,13 @@ pipeline {
         stage('Remove All Local Images with Same Name') {
             steps {
                 script {
-                    // Rimuovi tutte le immagini locali con lo stesso nome tranne la latest
                     sh '''
+                        # Rimuovi tutte le immagini con nome specifico tranne la latest
                         docker images "${IMAGE_NAME}" --format "{{.ID}} {{.Tag}}" | \
                         grep -v "latest" | awk '{print $1}' | xargs -r docker rmi || true
+
+                        # Rimuovi tutte le immagini dangling (senza tag)
+                        docker images -f "dangling=true" -q | xargs -r docker rmi || true
                     '''
                 }
             }
