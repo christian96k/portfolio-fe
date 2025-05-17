@@ -139,7 +139,7 @@ This blend of hands-on coding and architectural leadership has allowed me to del
                         href={activeProject.href}
                         className="p-2 text-truncate tex text-info"
                       >
-                        Visit Link
+                        {'Visit Link'}
                       </a>
                     </div>
                   </div>

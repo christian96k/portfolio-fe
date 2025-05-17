@@ -36,18 +36,20 @@
         &__infinite,&__list{
             height: 300px;
         }
+        
 
+        
         &__list{
             @include mixin.grid-system(4rem, 1rem, 16px, 0.1fr);
-        }
+            justify-content: center;
 
-
-
-        &__list{
             @include viewport.custom-media-breakpoint-down(md) {
                 height: 200px;
+                margin-bottom: 5rem!important;
+                @include mixin.grid-system(3rem, 1rem, 16px, 0.1fr);
 
             }
+
             li{
                 &::before {
                     content: '';

@@ -21,7 +21,7 @@ export const INFINITE_MENU_IMAGES: MenuItem[] = [
     active: false,
     image: IMAGES_PATH.DIGITAL_OCEAN,
     link: 'https://www.digitalocean.com/',
-    title: 'Digital Ocean',
+    title: 'D.Ocean',
     description: 'Deployed and managed applications on Digital Ocean, utilizing their cloud infrastructure for scalability and reliability.'
   },
   {
