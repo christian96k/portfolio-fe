@@ -6,6 +6,10 @@ export interface ContetItemProps {
     href?:string;
     imgWidth?:number;
     customClass?:string;
+    name:string;
+    onSetActive?: (activeItem: ContetItemProps) => void;
+    imageCases?: string[];
+    description: string;
 }
 
 const ContentItem:React.FC<ContetItemProps> = (
@@ -14,12 +18,22 @@ const ContentItem:React.FC<ContetItemProps> = (
     alt = '',
     href='#',
     customClass='',
-    imgWidth=55
+    imgWidth=55,
+    onSetActive = () => null,
+    name
   }
 ) => {
   return (
-    <a href={href}  target='blank' className={`${customClass} content-item  d-flex  justify-content-center align-items-center`} >
-        <img alt={alt} className="content-item__image img-fluid rounded-1" width={imgWidth} src={src} />
+    <a  onClick={()=>onSetActive({
+      src,
+      alt,
+      href,
+      imgWidth,
+      customClass,
+      name,
+      description: '',
+    })}  className={`${customClass} content-item  d-flex  justify-content-center align-items-center`} >
+      <img alt={alt} className="content-item__image img-fluid rounded-1" width={imgWidth} src={src} />
     </a>
   )
 }

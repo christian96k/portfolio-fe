@@ -49,7 +49,7 @@ import GIT_LAB from '../../assets/images/projects/gitlab.jpg';
 import MITRE from '../../assets/images/projects/mitre.jpg';
 import PROTO_3D from '../../assets/images/projects/3d.jpg';
 import MOTO_3D from '../../assets/images/projects/3d-moto.jpg';
-import COMING_SOON from '../../assets/images/projects/coming-soon.webp';
+import COMING_SOON from '../../assets/images/projects/coming-soon.png';
 
 
 import BG_BLACK from '../../assets/images/utils/bg-black.jpg';

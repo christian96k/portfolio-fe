@@ -1,5 +1,18 @@
 @use "../../assets/scss/viewport.scss" as viewport;
+@use "../../assets/scss/mixin.scss" as mixin;
 @use "../../assets/scss/variables.scss" as variables;
+
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 .home{
@@ -22,6 +35,10 @@
 
         &__infinite,&__list{
             height: 300px;
+        }
+
+        &__list{
+            @include mixin.grid-system(4rem, 1rem, 16px, 0.1fr);
         }
 
 
@@ -58,7 +75,25 @@
 
             gap: 8rem!important;
         }
-        &__folder{
+        &__view{
+            &__active{
+                &__content{
+                    animation: fadeSlideDown 0.5s ease-out;
+                }
+            }
+            .description{ 
+                p,a{
+                    font-size: 14px;
+                    max-height: 40dvh;
+                    overflow-y: auto;
+                    @include viewport.custom-media-breakpoint-down(md) {
+                        font-size: 12px;
+                        max-height: 30dvh;
+                        overflow-y: auto;
+                    }
+                }
+            }
         }
     }
 }
+

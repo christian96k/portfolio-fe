@@ -1,0 +1,6 @@
+@mixin grid-system($item-width, $gap, $padding, $frame) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($item-width, $frame));
+    grid-gap: $gap;
+    padding: $padding;
+}
