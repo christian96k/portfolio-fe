@@ -45,9 +45,13 @@
 
             @include viewport.custom-media-breakpoint-down(md) {
                 height: 200px;
-                margin-bottom: 5rem!important;
-                @include mixin.grid-system(3rem, 1rem, 16px, 0.1fr);
+                margin-bottom: 2rem!important;
+                margin-top: 1rem!important;
 
+                @include mixin.grid-system(4rem, 1rem, 0px, 0.1fr);
+                li{
+                    max-height: 50px!important
+                }
             }
 
             li{
@@ -66,6 +70,8 @@
                 &.active{
                     background: 
                     linear-gradient(45deg, variables.$primary-color, variables.$pure-black); 
+
+                   
                 }
             }
         }
@@ -81,6 +87,11 @@
             &__active{
                 &__content{
                     animation: fadeSlideDown 0.5s ease-out;
+                }
+                &__image,&__description{
+                    @include viewport.custom-media-breakpoint-down(md) {
+                        width: 100%!important;
+                    }
                 }
             }
             .description{ 

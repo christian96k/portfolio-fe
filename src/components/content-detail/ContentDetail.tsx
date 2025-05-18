@@ -37,10 +37,10 @@ const ContentDetail: React.FC<ContentDetailProps> = ({
                     maxIterations={0.1}
                     revealDirection='start'
                     className="font-size-14"
-                    encryptedClassName='color-primary' 
+                    encryptedClassName='content-detail__description color-primary' 
                 />
                     :
-                <p className='text-start' >
+                <p className='content-detail__description text-start' >
                     {description}
                 </p>
             }

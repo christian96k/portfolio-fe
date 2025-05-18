@@ -20,4 +20,12 @@
             max-width: 10rem;
         }
     }
+
+    &__description{
+        @include viewport.custom-media-breakpoint-down(lg) {
+           max-height: 20dvh;
+           overflow-y: auto;
+        }
+    }
+
 }

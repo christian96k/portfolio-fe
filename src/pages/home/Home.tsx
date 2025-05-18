@@ -37,7 +37,7 @@ function Home() {
   return (
     <main className="home">
       {/* HEADER */}
-      <div className="home__header col-12">
+      <div className="home__header col-12"> 
         <Header/>
       </div>
 
@@ -126,13 +126,13 @@ This blend of hands-on coding and architectural leadership has allowed me to del
                   <h4 className="home__projects__view__active__title text-center p-2">
                     {activeProject.name}
                   </h4>
-                  <div className="d-flex mb-5 mb-md-0">
+                  <div className="d-flex flex-column flex-md-row mb-5 mb-md-0">
                     <div className="w-40 home__projects__view__active__image rounded-3 p-3 border-gradient right flex-column gap-3 d-flex justify-content-center align-items-center">
                       {activeProject.imageCases?.map((item, index) => (
                         <ImageZoomLens key={index} zoom={9.5} lensSize={150} src={item} />
                       ))}
                     </div>
-                    <div className="description w-60">
+                    <div className="home__projects__view__active__description pt-3  description w-60">
                       <p className="p-2">{activeProject.description}</p>
                       <a
                         target="blank"
